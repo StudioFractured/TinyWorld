@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour
 {
-    //[SerializeField] GameObject _collider = null;
     [SerializeField] SpriteRenderer _renderer = null;
     [SerializeField] Collider2D _collider = null;
     [SerializeField] float _time = 0.5f;
 
     private void Awake()
     {
-        EndAttack();
+        DisableCollision();
     }
 
     public void GatherInput()
@@ -31,17 +30,17 @@ public class MeleeWeapon : MonoBehaviour
 
     private IEnumerator Attack_Routine()
     {
-        StartAttack();
+        EnableCollision();
         yield return new WaitForSeconds(_time);
-        EndAttack();
+        DisableCollision();
     }
 
-    private void StartAttack()
+    private void EnableCollision()
     {
         SetEnable(true);
     }
 
-    private void EndAttack()
+    public void DisableCollision()
     {
         SetEnable(false);
     }

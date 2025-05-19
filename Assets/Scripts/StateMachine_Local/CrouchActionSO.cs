@@ -28,10 +28,11 @@ public class CrouchAction : StateAction
         _crouchHandler.StartCrouch();
     }
 
-    public override void OnStateExit()
-    {
-        _crouchHandler.EndCrouch();
-    }
+    //public override void OnStateExit()
+    //{
+    //    _crouchHandler.EndCrouch();
+    //    _weaponHandler.CrouchSword.DisableCollision();
+    //}
 
     public override void OnFixedUpdate()
     {

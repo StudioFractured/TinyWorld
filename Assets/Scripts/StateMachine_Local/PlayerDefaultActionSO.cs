@@ -13,11 +13,19 @@ public class PlayerDefaultAction : StateAction
 {
     private PlayerController _controller = null;
     private PlayerWeaponHandler _weaponHandler = null;
+    private CrouchHandler _crouchHandler = null;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _controller = _stateMachine.GetComponent<PlayerController>();
         _weaponHandler = _stateMachine.GetComponent<PlayerWeaponHandler>();
+        _crouchHandler = _stateMachine.GetComponent<CrouchHandler>();
+    }
+
+    public override void OnStateEnter()
+    {
+        //_weaponHandler.StandSword.DisableCollision();
+        _crouchHandler.EndCrouch();
     }
 
     public override void OnFixedUpdate()
