@@ -14,6 +14,11 @@ namespace TarodevController
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         [SerializeField] private ScriptableStats _stats;
+
+        [Header("// READONLY")]
+        public Vector2 _movementInput = default;
+        public float _movementInputNormalized = default;
+
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
         private FrameInput _frameInput;
@@ -63,6 +68,9 @@ namespace TarodevController
                 _jumpToConsume = true;
                 _timeJumpWasPressed = _time;
             }
+
+            _movementInput = _frameInput.Move;
+            _movementInputNormalized = _frameInput.Move.magnitude;
         }
 
         #region Collisions
