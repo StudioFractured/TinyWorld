@@ -12,7 +12,7 @@ public class MeleeWeapon : MonoBehaviour
         DisableCollision();
     }
 
-    public void GatherInput()
+    public virtual void GatherInput()
     {
         bool _input = Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1");
 
@@ -35,7 +35,7 @@ public class MeleeWeapon : MonoBehaviour
         DisableCollision();
     }
 
-    private void EnableCollision()
+    public void EnableCollision()
     {
         SetEnable(true);
     }

@@ -21,7 +21,7 @@ MonoBehaviour:
   MaxSpeed: 8
   Acceleration: 99999
   GroundDeceleration: 99999
-  AirDeceleration: 30
+  AirDeceleration: 99999
   GroundingForce: -1.5
   GrounderDistance: 0.05
   JumpPower: 22

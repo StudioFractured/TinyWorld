@@ -26,6 +26,7 @@ public class CrouchAction : StateAction
     {
         _controller.StopVelocity();
         _crouchHandler.StartCrouch();
+        _weaponHandler.DisableShields();
     }
 
     //public override void OnStateExit()
@@ -43,7 +44,8 @@ public class CrouchAction : StateAction
 
     public override void OnUpdate()
     {
-        _weaponHandler.CrouchSword.GatherInput();
+        //_weaponHandler.CrouchSword.GatherInput();
+        _weaponHandler.GatherCrouchInput();
 
         _controller.IncreaseDeltaTime();
         _controller.GatherInput();
