@@ -15,7 +15,7 @@ public class PlayerWeaponHandler : MonoBehaviour
     {
         if (_sword.activeInHierarchy) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1"))
         {
             StartCoroutine(Sword_Routine());
         }
