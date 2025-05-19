@@ -38,13 +38,18 @@ namespace TarodevController
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
         }
 
-        private void Update()
+        //private void Update()
+        //{
+        //    IncreaseDeltaTime();
+        //    GatherInput();
+        //}
+
+        public void IncreaseDeltaTime()
         {
             _time += Time.deltaTime;
-            GatherInput();
         }
 
-        private void GatherInput()
+        public void GatherInput()
         {
             _frameInput = new FrameInput
             {
@@ -66,23 +71,21 @@ namespace TarodevController
             }
         }
 
-        private void FixedUpdate()
-        {
-            CheckCollisions();
-
-            HandleJump();
-            HandleDirection();
-            HandleGravity();
-
-            ApplyMovement();
-        }
+        //private void FixedUpdate()
+        //{
+        //    CheckCollisions();
+        //    HandleJump();
+        //    HandleDirection();
+        //    HandleGravity();
+        //    ApplyMovement();
+        //}
 
         #region Collisions
 
         private float _frameLeftGrounded = float.MinValue;
         private bool _grounded;
 
-        private void CheckCollisions()
+        public void CheckCollisions()
         {
             Physics2D.queriesStartInColliders = false;
 
@@ -126,7 +129,7 @@ namespace TarodevController
         private bool HasBufferedJump => _bufferedJumpUsable && _time < _timeJumpWasPressed + _stats.JumpBuffer;
         private bool CanUseCoyote => _coyoteUsable && !_grounded && _time < _frameLeftGrounded + _stats.CoyoteTime;
 
-        private void HandleJump()
+        public void HandleJump()
         {
             if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.linearVelocity.y > 0) _endedJumpEarly = true;
 
@@ -151,7 +154,7 @@ namespace TarodevController
 
         #region Horizontal
 
-        private void HandleDirection()
+        public void HandleDirection()
         {
             if (_frameInput.Move.x == 0)
             {
@@ -168,7 +171,7 @@ namespace TarodevController
 
         #region Gravity
 
-        private void HandleGravity()
+        public void HandleGravity()
         {
             if (_grounded && _frameVelocity.y <= 0f)
             {
@@ -184,7 +187,7 @@ namespace TarodevController
 
         #endregion
 
-        private void ApplyMovement() => _rb.linearVelocity = _frameVelocity;
+        public void ApplyMovement() => _rb.linearVelocity = _frameVelocity;
 
         public bool IsMoving()
         {
@@ -214,3 +217,10 @@ namespace TarodevController
         public Vector2 FrameInput { get; }
     }
 }
+
+//public enum PlayerState
+//{
+//    Default,
+//    Attacking,
+//    Crouched,
+//}

@@ -1,0 +1,35 @@
+using TarodevController;
+using UnityEngine;
+using UOP1.StateMachine;
+using UOP1.StateMachine.ScriptableObjects;
+
+[CreateAssetMenu(fileName = "Action_PlayerDefault", menuName = "SO/State Machines/Actions/Player Default")]
+public class PlayerDefaultActionSO : StateActionSO<PlayerDefaultAction>
+{
+    //
+}
+
+public class PlayerDefaultAction : StateAction
+{
+    private PlayerController _controller = null;
+
+    public override void Awake(StateMachine _stateMachine)
+    {
+        _controller = _stateMachine.GetComponent<PlayerController>();
+    }
+
+    public override void OnFixedUpdate()
+    {
+        _controller.CheckCollisions();
+        _controller.HandleJump();
+        _controller.HandleDirection();
+        _controller.HandleGravity();
+        _controller.ApplyMovement();
+    }
+
+    public override void OnUpdate()
+    {
+        _controller.IncreaseDeltaTime();
+        _controller.GatherInput();
+    }
+}
