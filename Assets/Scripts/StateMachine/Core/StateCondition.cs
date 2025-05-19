@@ -44,8 +44,8 @@ namespace UOP1.StateMachine
 		/// <summary>
 		/// Awake is called when creating a new instance. Use this method to cache the components needed for the condition.
 		/// </summary>
-		/// <param name="stateMachine">The <see cref="StateMachine"/> this instance belongs to.</param>
-		public virtual void Awake(StateMachine stateMachine) { }
+		/// <param name="_stateMachine">The <see cref="StateMachine"/> this instance belongs to.</param>
+		public virtual void Awake(StateMachine _stateMachine) { }
 		public virtual void OnStateEnter() { }
 		public virtual void OnStateExit() { }
 	}

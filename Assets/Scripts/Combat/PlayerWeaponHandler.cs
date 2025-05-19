@@ -8,12 +8,17 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void Awake()
     {
-        _sword.SetActive(false);
+        EndAttack();
     }
 
     private void Update()
     {
-        if (_sword.activeInHierarchy) return;
+        GatherInput();
+    }
+
+    public void GatherInput()
+    {
+        if (IsAttacking()) return;
 
         if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1"))
         {
@@ -23,8 +28,23 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private IEnumerator Sword_Routine()
     {
-        _sword.SetActive(true);
+        StartAttack();
         yield return new WaitForSeconds(_time);
+        EndAttack();
+    }
+
+    private void StartAttack()
+    {
+        _sword.SetActive(true);
+    }
+
+    private void EndAttack()
+    {
         _sword.SetActive(false);
+    }
+
+    public bool IsAttacking()
+    {
+        return _sword.activeInHierarchy;
     }
 }

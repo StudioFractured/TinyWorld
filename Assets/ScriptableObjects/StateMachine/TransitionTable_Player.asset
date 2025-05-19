@@ -18,5 +18,12 @@ MonoBehaviour:
     ToState: {fileID: 11400000, guid: e9b9d8ce9d2ca5343889af03ce9b8d3d, type: 2}
     Conditions:
     - ExpectedResult: 0
-      Condition: {fileID: 11400000, guid: 6270ddffef9bd8f4b98f0962acee98c9, type: 2}
+      Condition: {fileID: 11400000, guid: 9be2ed694bf8e304cb1e638bb9015400, type: 2}
+      Operator: 0
+  - editor_id: FROM-Attacking >>> TO-Default
+    FromState: {fileID: 11400000, guid: e9b9d8ce9d2ca5343889af03ce9b8d3d, type: 2}
+    ToState: {fileID: 11400000, guid: 41b20c1c0fe3bba46b93ea1b72124331, type: 2}
+    Conditions:
+    - ExpectedResult: 1
+      Condition: {fileID: 11400000, guid: 9be2ed694bf8e304cb1e638bb9015400, type: 2}
       Operator: 0
