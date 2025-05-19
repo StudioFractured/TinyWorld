@@ -38,12 +38,6 @@ namespace TarodevController
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
         }
 
-        //private void Update()
-        //{
-        //    IncreaseDeltaTime();
-        //    GatherInput();
-        //}
-
         public void IncreaseDeltaTime()
         {
             _time += Time.deltaTime;
@@ -70,15 +64,6 @@ namespace TarodevController
                 _timeJumpWasPressed = _time;
             }
         }
-
-        //private void FixedUpdate()
-        //{
-        //    CheckCollisions();
-        //    HandleJump();
-        //    HandleDirection();
-        //    HandleGravity();
-        //    ApplyMovement();
-        //}
 
         #region Collisions
 
@@ -190,6 +175,11 @@ namespace TarodevController
         #endregion
 
         public void ApplyMovement() => _rb.linearVelocity = _frameVelocity;
+
+        public void StopVelocity()
+        {
+            _rb.linearVelocity = Vector2.zero;
+        }
 
         public bool IsMoving()
         {

@@ -11,11 +11,6 @@ public class PlayerWeaponHandler : MonoBehaviour
         EndAttack();
     }
 
-    private void Update()
-    {
-        GatherInput();
-    }
-
     public void GatherInput()
     {
         if (IsAttacking()) return;

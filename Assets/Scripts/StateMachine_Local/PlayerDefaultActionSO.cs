@@ -12,10 +12,12 @@ public class PlayerDefaultActionSO : StateActionSO<PlayerDefaultAction>
 public class PlayerDefaultAction : StateAction
 {
     private PlayerController _controller = null;
+    private PlayerWeaponHandler _weaponHandler = null;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _controller = _stateMachine.GetComponent<PlayerController>();
+        _weaponHandler = _stateMachine.GetComponent<PlayerWeaponHandler>();
     }
 
     public override void OnFixedUpdate()
@@ -29,6 +31,8 @@ public class PlayerDefaultAction : StateAction
 
     public override void OnUpdate()
     {
+        _weaponHandler.GatherInput();
+
         _controller.IncreaseDeltaTime();
         _controller.GatherInput();
     }
