@@ -14,13 +14,13 @@ namespace TarodevController
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         [SerializeField] private ScriptableStats _stats;
+        [SerializeField] CapsuleCollider2D _col;
 
         [Header("// READONLY")]
         public Vector2 _movementInput = default;
         public float _movementInputNormalized = default;
 
         private Rigidbody2D _rb;
-        private CapsuleCollider2D _col;
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
@@ -38,7 +38,7 @@ namespace TarodevController
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            _col = GetComponent<CapsuleCollider2D>();
+            //_col = GetComponent<CapsuleCollider2D>();
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
         }
@@ -109,6 +109,7 @@ namespace TarodevController
             }
 
             Physics2D.queriesStartInColliders = _cachedQueryStartInColliders;
+            Debug.Log($"{_grounded}");
         }
 
         #endregion
