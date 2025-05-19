@@ -16,9 +16,9 @@ namespace TarodevController
         [SerializeField] private ScriptableStats _stats;
         [SerializeField] CapsuleCollider2D _col;
 
-        [Header("// READONLY")]
-        public Vector2 _movementInput = default;
-        public float _movementInputNormalized = default;
+        //[Header("// READONLY")]
+        //public Vector2 _movementInput = default;
+        //public float _movementInputNormalized = default;
 
         private Rigidbody2D _rb;
         private FrameInput _frameInput;
@@ -69,8 +69,8 @@ namespace TarodevController
                 _timeJumpWasPressed = _time;
             }
 
-            _movementInput = _frameInput.Move;
-            _movementInputNormalized = _frameInput.Move.magnitude;
+            //_movementInput = _frameInput.Move;
+            //_movementInputNormalized = _frameInput.Move.magnitude;
         }
 
         #region Collisions
@@ -109,7 +109,6 @@ namespace TarodevController
             }
 
             Physics2D.queriesStartInColliders = _cachedQueryStartInColliders;
-            Debug.Log($"{_grounded}");
         }
 
         #endregion
