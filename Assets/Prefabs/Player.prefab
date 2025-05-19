@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 5628214663107158262}
   - component: {fileID: 3641924313821427924}
   - component: {fileID: 3880523448500832217}
+  - component: {fileID: 4862029122781173080}
   - component: {fileID: 6713804980678836454}
   m_Layer: 0
   m_Name: Sword
@@ -204,6 +205,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &4862029122781173080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437652369258061668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87efdeaa7553d704a83f5054998355fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 3641924313821427924}
+  _collider: {fileID: 3880523448500832217}
+  _time: 0.5
 --- !u!114 &6713804980678836454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +245,7 @@ GameObject:
   - component: {fileID: 5608576708292694909}
   - component: {fileID: 7382442541478785883}
   - component: {fileID: 5435967000923112967}
+  - component: {fileID: 5156024516102663210}
   - component: {fileID: 5760091053500931846}
   m_Layer: 0
   m_Name: Sword_Crouch
@@ -236,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5608576708292694909
 Transform:
   m_ObjectHideFlags: 0
@@ -353,6 +370,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &5156024516102663210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4997690411131551315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87efdeaa7553d704a83f5054998355fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 7382442541478785883}
+  _collider: {fileID: 5435967000923112967}
+  _time: 0.5
 --- !u!114 &5760091053500931846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,8 +583,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 40e54ad1353f724448391a4f2fe69be8, type: 2}
   _col: {fileID: 5483899800430580257}
-  _movementInput: {x: 0, y: 0}
-  _movementInputNormalized: 0
 --- !u!114 &7296508924212907380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,8 +609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64125232c0d84c541be7e14800733a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sword: {fileID: 4437652369258061668}
-  _time: 0.3
+  _standSword: {fileID: 4862029122781173080}
+  _crouchSword: {fileID: 5156024516102663210}
 --- !u!114 &1303340540709385551
 MonoBehaviour:
   m_ObjectHideFlags: 0

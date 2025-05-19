@@ -37,14 +37,12 @@ public class CrouchAction : StateAction
     {
         _controller.CheckCollisions();
         _controller.HandleJump();
-        //_controller.HandleDirection();
         _controller.HandleGravity();
-        //_controller.ApplyMovement();
     }
 
     public override void OnUpdate()
     {
-        _weaponHandler.GatherInput();
+        _weaponHandler.CrouchSword.GatherInput();
 
         _controller.IncreaseDeltaTime();
         _controller.GatherInput();
