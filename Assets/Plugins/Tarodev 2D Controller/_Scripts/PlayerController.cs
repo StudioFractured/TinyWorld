@@ -85,6 +85,8 @@ namespace TarodevController
         private float _frameLeftGrounded = float.MinValue;
         private bool _grounded;
 
+        public bool Grounded { get => _grounded; }
+
         public void CheckCollisions()
         {
             Physics2D.queriesStartInColliders = false;
