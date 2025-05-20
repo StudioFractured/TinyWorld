@@ -14,15 +14,18 @@ public class FlyingEnemy : MonoBehaviour
     [Header("Hovering")]
     public float hoverSpeed = 2f;
     public float hoverHeight = 0.5f;
+    public float idleRange = 3f;
+    public float idleTargetRefreshTime = 3f;
 
     [Header("Attack")]
     public float attackCooldown = 2f;
 
-    private bool isAttacking = false;
     private bool onCooldown = false;
     private float cooldownTimer = 0f;
 
     private float hoverOffset;
+    private Vector3 idleTarget;
+    private float idleTimer;
 
     private void Start()
     {
@@ -36,6 +39,7 @@ public class FlyingEnemy : MonoBehaviour
         }
 
         hoverOffset = Random.Range(0f, 2f * Mathf.PI);
+        PickNewIdleTarget();
     }
 
     private void Update()
@@ -57,7 +61,7 @@ public class FlyingEnemy : MonoBehaviour
         }
         else
         {
-            ReturnToBaseWithHover();
+            IdleAroundBase();
         }
     }
 
@@ -74,15 +78,27 @@ public class FlyingEnemy : MonoBehaviour
         }
     }
 
-    private void ReturnToBaseWithHover()
+    private void IdleAroundBase()
     {
-        Vector3 baseHoverPos = new Vector3(
-            basePoint.position.x,
-            basePoint.position.y + Mathf.Sin(Time.time * hoverSpeed + hoverOffset) * hoverHeight,
-            basePoint.position.z
-        );
+        idleTimer -= Time.deltaTime;
 
-        transform.position = Vector3.MoveTowards(transform.position, baseHoverPos, speed * Time.deltaTime);
+        if (idleTimer <= 0f || Vector3.Distance(transform.position, idleTarget) < 0.2f)
+        {
+            PickNewIdleTarget();
+        }
+
+        // Add hover oscillation to the Y value
+        float hoverY = Mathf.Sin(Time.time * hoverSpeed + hoverOffset) * hoverHeight;
+        Vector3 hoverPos = new Vector3(idleTarget.x, basePoint.position.y + hoverY, idleTarget.z);
+
+        transform.position = Vector3.MoveTowards(transform.position, hoverPos, speed * Time.deltaTime);
+    }
+
+    private void PickNewIdleTarget()
+    {
+        Vector2 randomCircle = Random.insideUnitCircle * idleRange;
+        idleTarget = basePoint.position + new Vector3(randomCircle.x, 0, randomCircle.y);
+        idleTimer = idleTargetRefreshTime;
     }
 
     private void Attack()
@@ -98,5 +114,9 @@ public class FlyingEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         if (basePoint != null)
             Gizmos.DrawWireSphere(basePoint.position, chaseRange);
+
+        Gizmos.color = Color.yellow;
+        if (basePoint != null)
+            Gizmos.DrawWireSphere(basePoint.position, idleRange);
     }
 }
