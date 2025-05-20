@@ -20,11 +20,6 @@ public class IsCrouchingCondition : Condition
 
     protected override bool Statement()
     {
-        //var _dot = Vector2.Dot(_controller.FrameInput, Vector2.down);
-        //Debug.Log($"{_controller.FrameInput}");
-        //Debug.Log($"{_controller.FrameInput.normalized}");
         return _controller.FrameInput.y < -0.5f;
-        //return _controller.FrameInput.y < -0.5f;
-        //return _controller.FrameInput == Vector2.down;
     }
 }
