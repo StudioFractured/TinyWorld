@@ -67,3 +67,10 @@ MonoBehaviour:
     - ExpectedResult: 1
       Condition: {fileID: 11400000, guid: 9be2ed694bf8e304cb1e638bb9015400, type: 2}
       Operator: 0
+  - editor_id: FROM_Default_TO_Knockback
+    FromState: {fileID: 11400000, guid: 41b20c1c0fe3bba46b93ea1b72124331, type: 2}
+    ToState: {fileID: 11400000, guid: 8fa47f8b267cbc148b214e66a906cddd, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: d126b7c8a6c30c14dae217cd6e832441, type: 2}
+      Operator: 0

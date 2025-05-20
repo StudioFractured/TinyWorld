@@ -561,13 +561,14 @@ GameObject:
   - component: {fileID: 5196733177470246697}
   - component: {fileID: 4976216670244558586}
   - component: {fileID: 1780733074494760507}
+  - component: {fileID: 7771583812530609442}
   - component: {fileID: 8639340084573827914}
   - component: {fileID: 2267561453439946802}
   - component: {fileID: 7296508924212907380}
   - component: {fileID: 6954671280340619532}
   - component: {fileID: 1303340540709385551}
-  - component: {fileID: 7771583812530609442}
-  m_Layer: 0
+  - component: {fileID: 6815902453125264030}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -702,6 +703,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.7}
   m_EdgeRadius: 0
+--- !u!210 &7771583812530609442
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943158972980337507}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!114 &8639340084573827914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,18 +792,23 @@ MonoBehaviour:
   _target: {fileID: 6126210143108257979}
   _defaultCollider: {fileID: 4976216670244558586}
   _crouchCollider: {fileID: 1780733074494760507}
---- !u!210 &7771583812530609442
-SortingGroup:
+--- !u!114 &6815902453125264030
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6943158972980337507}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d0fd0e82812a845b69704456e055b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxValue: 3
+  _initialValue: 3
+  _currentValue: 0
+  _lastDamageSource: {fileID: 0}
+  _hasTakenDamageThisFrame: 0
 --- !u!1 &7439549398062066124
 GameObject:
   m_ObjectHideFlags: 0
