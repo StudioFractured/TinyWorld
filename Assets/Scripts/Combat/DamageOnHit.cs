@@ -1,4 +1,3 @@
-using UnityEditor.Rendering.Universal.ShaderGraph;
 using UnityEngine;
 
 public class DamageOnHit : MonoBehaviour
@@ -12,7 +11,7 @@ public class DamageOnHit : MonoBehaviour
 
         if (_other.TryGetComponent(out HealthBehaviour _health))
         {
-            _health.TakeDamage(_damage);
+            _health.TakeDamage(gameObject, _damage);
         }
     }
 }

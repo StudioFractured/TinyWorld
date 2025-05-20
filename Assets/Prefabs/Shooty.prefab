@@ -123,14 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23b03b9aa8cebb4998c8fccbc135f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 3
-  Damage: 1
-  effectDuration: 1
-  shrinkFactor: 0.9
-  ShrinkDuration: 0.2
-  SmokePrefab: {fileID: 104829970813648393, guid: d39f0772e1e57914a9f5a37078cbea3d, type: 3}
-  SpawnPointSmoke: {fileID: 1721103007296555295}
+  _maxValue: 3
+  _initialValue: 3
   _currentValue: 0
+  _lastDamageSource: {fileID: 0}
 --- !u!114 &2901941730838536099
 MonoBehaviour:
   m_ObjectHideFlags: 0
