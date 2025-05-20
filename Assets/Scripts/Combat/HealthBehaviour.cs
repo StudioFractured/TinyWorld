@@ -17,7 +17,7 @@ public class HealthBehaviour : MonoBehaviour
     public event UnityAction OnDie = null;
 
     public GameObject LastDamageSource { get => _lastDamageSource; }
-    public bool HasTakenDamageThisFrame { get => _hasTakenDamageThisFrame; set => _hasTakenDamageThisFrame = value; }
+    public bool HasTakenDamageThisFrame { get => _hasTakenDamageThisFrame; }
 
     private void Awake()
     {
@@ -41,6 +41,8 @@ public class HealthBehaviour : MonoBehaviour
 
     public void TakeDamage(GameObject _source, float _value)
     {
+        if (!enabled) return;
+
         _lastDamageSource = _source;
         _currentValue -= _value;
         _currentValue = Mathf.Clamp(_currentValue, 0f, _maxValue);

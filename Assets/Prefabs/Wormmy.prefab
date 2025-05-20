@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5440642306493521355}
   - component: {fileID: 8304215205977676588}
   - component: {fileID: -1985097241506111035}
+  - component: {fileID: 2664965786169351874}
   m_Layer: 0
   m_Name: Wormmy
   m_TagString: Enemy
@@ -140,6 +141,21 @@ MonoBehaviour:
   _initialValue: 2
   _currentValue: 0
   _lastDamageSource: {fileID: 0}
+  _hasTakenDamageThisFrame: 0
+--- !u!114 &2664965786169351874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785883009915645957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e22b00934e7d64b8d262cf927434ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tags: {fileID: 11400000, guid: cc334079652fcf94983c61ffa4337060, type: 2}
+  _damage: 1
 --- !u!1 &2675495749359138692
 GameObject:
   m_ObjectHideFlags: 0

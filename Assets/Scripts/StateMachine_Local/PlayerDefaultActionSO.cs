@@ -24,7 +24,6 @@ public class PlayerDefaultAction : StateAction
 
     public override void OnStateEnter()
     {
-        //_weaponHandler.StandSword.DisableCollision();
         _crouchHandler.EndCrouch();
         _weaponHandler.DisableShields();
     }
@@ -40,8 +39,6 @@ public class PlayerDefaultAction : StateAction
 
     public override void OnUpdate()
     {
-        //_weaponHandler.StandSword.GatherInput();
-        //_weaponHandler.StandShield.GatherInput();
         _weaponHandler.GatherStandInput();
 
         _controller.IncreaseDeltaTime();

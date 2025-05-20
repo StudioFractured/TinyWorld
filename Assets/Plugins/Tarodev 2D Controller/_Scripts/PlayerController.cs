@@ -215,16 +215,6 @@ namespace TarodevController
             _stats = _defaultStats;
         }
 
-        //public void AddImpulse(Vector2 _force)
-        //{
-        //    _rb.AddForce(_force, ForceMode2D.Impulse);
-        //}
-
-        //public bool IsMoving()
-        //{
-        //    return _rb.linearVelocity.x != 0;
-        //}
-
 #if UNITY_EDITOR
         private void OnValidate()
         {

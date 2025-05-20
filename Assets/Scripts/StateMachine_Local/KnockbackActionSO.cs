@@ -7,9 +7,7 @@ using UOP1.StateMachine.ScriptableObjects;
 public class KnockbackActionSO : StateActionSO<KnockbackAction>
 {
     [SerializeField] ScriptableStats _stats = null;
-    [SerializeField] float _force = 10f;
 
-    public float Force { get => _force; }
     public ScriptableStats Stats { get => _stats; }
 }
 
@@ -17,48 +15,42 @@ public class KnockbackAction : StateAction
 {
     private new KnockbackActionSO OriginSO => (KnockbackActionSO)base.OriginSO;
 
-    private Rigidbody2D _rb = null;
     private PlayerController _controller = null;
     private PlayerWeaponHandler _weaponHandler = null;
     private CrouchHandler _crouchHandler = null;
     private HealthBehaviour _health = null;
+    private SideFlipper _flipper = null;
     private float _timer = 0f;
 
     public override void Awake(StateMachine _stateMachine)
     {
-        _rb = _stateMachine.GetComponent<Rigidbody2D>();
         _controller = _stateMachine.GetComponent<PlayerController>();
         _weaponHandler = _stateMachine.GetComponent<PlayerWeaponHandler>();
         _crouchHandler = _stateMachine.GetComponent<CrouchHandler>();
         _health = _stateMachine.GetComponent<HealthBehaviour>();
+        _flipper = _stateMachine.GetComponent<SideFlipper>();
     }
 
     public override void OnStateEnter()
     {
-        //_rb.gravityScale = 1;
         _crouchHandler.EndCrouch();
         _weaponHandler.DisableShields();
 
-        // flip to damageSource and disable script.
+        var _xDirection = _health.LastDamageSource.transform.position.x >= _controller.transform.position.x ? -1f : 1f;
+        _controller.StartKnockBack(_xDirection, OriginSO.Stats);
 
+        _flipper.Flip(_xDirection < 0);
+        _flipper.enabled = false;
         _health.enabled = false;
         _timer = 0f;
-
-        // get last damage source position.
-        var _direction = (Vector2.left + Vector2.up).normalized;
-        var _force = _direction * OriginSO.Force;
-        //_controller.ForceGrounded(false);
-        //_controller.StopVelocity();
-        //_controller.AddImpulse(_force);
-        _controller.StartKnockBack(-1, OriginSO.Stats);
     }
 
     public override void OnStateExit()
     {
-        // re-enable sideFlipper script.
-        //_rb.gravityScale = 0;
-        _health.enabled = true;
+        _controller.StopVelocity();
         _controller.ResetStats();
+        _flipper.enabled = true;
+        _health.enabled = true;
     }
 
     public override void OnFixedUpdate()
@@ -70,8 +62,6 @@ public class KnockbackAction : StateAction
             _controller.CheckCollisions();
         }
 
-        //_controller.HandleJump();
-        //_controller.HandleDirection();
         _controller.HandleGravity();
         _controller.ApplyMovement();
     }

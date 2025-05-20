@@ -14,8 +14,7 @@ public class MeleeWeapon : MonoBehaviour
 
     public virtual void GatherInput()
     {
-        //bool _input = Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1");
-        bool _input = false;
+        bool _input = Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1");
 
         if (_input)
         {
