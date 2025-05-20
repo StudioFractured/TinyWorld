@@ -99,7 +99,6 @@ namespace UOP1.StateMachine
 
         private void Transition(State transitionState)
         {
-            //Debug.Log($"from_{_currentState._originSO.name}_to_{transitionState._originSO.name}");
             _currentState.OnStateExit();
             _currentState = transitionState;
             _currentState.OnStateEnter();

@@ -80,6 +80,11 @@ namespace TarodevController
 
         public bool Grounded { get => _grounded; }
 
+        public void ForceGrounded(bool _value)
+        {
+            _grounded = _value;
+        }
+
         public void CheckCollisions()
         {
             Physics2D.queriesStartInColliders = false;
@@ -187,6 +192,11 @@ namespace TarodevController
         public void StopVelocity()
         {
             _rb.linearVelocity = Vector2.zero;
+        }
+
+        public void AddImpulse(Vector2 _force)
+        {
+            _rb.AddForce(_force, ForceMode2D.Impulse);
         }
 
         public bool IsMoving()

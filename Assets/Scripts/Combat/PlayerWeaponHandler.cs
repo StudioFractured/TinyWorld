@@ -40,6 +40,8 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     public void DisableShields()
     {
+        _standSword.DisableCollision();
+        _crouchSword.DisableCollision();
         _standShield.DisableCollision();
         _crouchShield.DisableCollision();
     }

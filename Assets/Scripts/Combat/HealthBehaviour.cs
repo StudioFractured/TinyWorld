@@ -17,7 +17,7 @@ public class HealthBehaviour : MonoBehaviour
     public event UnityAction OnDie = null;
 
     public GameObject LastDamageSource { get => _lastDamageSource; }
-    public bool HasTakenDamageThisFrame { get => _hasTakenDamageThisFrame; }
+    public bool HasTakenDamageThisFrame { get => _hasTakenDamageThisFrame; set => _hasTakenDamageThisFrame = value; }
 
     private void Awake()
     {
@@ -37,12 +37,6 @@ public class HealthBehaviour : MonoBehaviour
         _currentValue += _value;
         _currentValue = Mathf.Clamp(_currentValue, 0f, _maxValue);
         OnHealed?.Invoke(_currentValue);
-    }
-
-    [ContextMenu("// TakeDamage()")]
-    private void TakeDamage()
-    {
-        TakeDamage(null, 1);
     }
 
     public void TakeDamage(GameObject _source, float _value)
@@ -71,5 +65,11 @@ public class HealthBehaviour : MonoBehaviour
     {
         OnDie?.Invoke();
         gameObject.SetActive(false);
+    }
+
+    [ContextMenu("// TakeDamage()")]
+    public void TakeDamage()
+    {
+        TakeDamage(null, 0);
     }
 }
