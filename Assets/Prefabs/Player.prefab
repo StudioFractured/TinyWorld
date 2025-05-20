@@ -217,8 +217,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.7}
-  m_Size: {x: 1, y: 1.4}
+  m_Offset: {x: 0, y: 1}
+  m_Size: {x: 1, y: 2}
   m_Direction: 0
 --- !u!1 &4437652369258061668
 GameObject:
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 395022085557045353}
   - component: {fileID: 5196733177470246697}
   - component: {fileID: 4976216670244558586}
-  - component: {fileID: 1780733074494760507}
+  - component: {fileID: 9086568007366929116}
   - component: {fileID: 7771583812530609442}
   - component: {fileID: 8639340084573827914}
   - component: {fileID: 7772586091523927594}
@@ -745,11 +745,11 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.7}
-  m_Size: {x: 1, y: 1.4}
+  m_Offset: {x: 0, y: 1}
+  m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!61 &1780733074494760507
-BoxCollider2D:
+--- !u!58 &9086568007366929116
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -782,18 +782,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.35}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.7}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_Radius: 0.5
 --- !u!210 &7771583812530609442
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -900,7 +890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7663617450701666454}
   _defaultCollider: {fileID: 4976216670244558586}
-  _crouchCollider: {fileID: 1780733074494760507}
+  _crouchCollider: {fileID: 9086568007366929116}
 --- !u!114 &6815902453125264030
 MonoBehaviour:
   m_ObjectHideFlags: 0
