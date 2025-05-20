@@ -41,6 +41,7 @@ public class AttackAction : StateAction
 
     public override void OnUpdate()
     {
-        //
+        _controller.IncreaseDeltaTime();
+        _controller.GatherInput();
     }
 }

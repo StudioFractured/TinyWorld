@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TransitionTable_Player
   m_EditorClassIdentifier: 
   _transitions:
-  - editor_id: FROM-Default_TO-Attack
+  - editor_id: FROM_Default_TO_Attack
     FromState: {fileID: 11400000, guid: 41b20c1c0fe3bba46b93ea1b72124331, type: 2}
     ToState: {fileID: 11400000, guid: e9b9d8ce9d2ca5343889af03ce9b8d3d, type: 2}
     Conditions:
@@ -23,7 +23,7 @@ MonoBehaviour:
     - ExpectedResult: 0
       Condition: {fileID: 11400000, guid: 9be2ed694bf8e304cb1e638bb9015400, type: 2}
       Operator: 0
-  - editor_id: FROM-Attack_TO-Default
+  - editor_id: FROM_Attack_TO_Default
     FromState: {fileID: 11400000, guid: e9b9d8ce9d2ca5343889af03ce9b8d3d, type: 2}
     ToState: {fileID: 11400000, guid: 41b20c1c0fe3bba46b93ea1b72124331, type: 2}
     Conditions:
@@ -33,7 +33,7 @@ MonoBehaviour:
     - ExpectedResult: 1
       Condition: {fileID: 11400000, guid: 9be2ed694bf8e304cb1e638bb9015400, type: 2}
       Operator: 0
-  - editor_id: FROM-Default_TO-Crouch
+  - editor_id: FROM_Default_TO_Crouch
     FromState: {fileID: 11400000, guid: 41b20c1c0fe3bba46b93ea1b72124331, type: 2}
     ToState: {fileID: 11400000, guid: 8823ad3dd5dee6e4bb60c463e8f9e620, type: 2}
     Conditions:
@@ -43,7 +43,7 @@ MonoBehaviour:
     - ExpectedResult: 0
       Condition: {fileID: 11400000, guid: 1e27fedbd62c7fe4280e5b89d26c6b4e, type: 2}
       Operator: 0
-  - editor_id: FROM-Crouch_TO-Default
+  - editor_id: FROM_Crouch_TO_Default
     FromState: {fileID: 11400000, guid: 8823ad3dd5dee6e4bb60c463e8f9e620, type: 2}
     ToState: {fileID: 11400000, guid: 41b20c1c0fe3bba46b93ea1b72124331, type: 2}
     Conditions:
@@ -53,10 +53,17 @@ MonoBehaviour:
     - ExpectedResult: 1
       Condition: {fileID: 11400000, guid: 1e27fedbd62c7fe4280e5b89d26c6b4e, type: 2}
       Operator: 0
-  - editor_id: FROM-Crouch_TO-Attack
+  - editor_id: FROM_Crouch_TO_CrouchAttack
     FromState: {fileID: 11400000, guid: 8823ad3dd5dee6e4bb60c463e8f9e620, type: 2}
-    ToState: {fileID: 11400000, guid: e9b9d8ce9d2ca5343889af03ce9b8d3d, type: 2}
+    ToState: {fileID: 11400000, guid: 6953de0f9a04068478d77a17da346e1c, type: 2}
     Conditions:
     - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: 9be2ed694bf8e304cb1e638bb9015400, type: 2}
+      Operator: 0
+  - editor_id: FROM_CrouchAttack_TO_Crouch
+    FromState: {fileID: 11400000, guid: 6953de0f9a04068478d77a17da346e1c, type: 2}
+    ToState: {fileID: 11400000, guid: 8823ad3dd5dee6e4bb60c463e8f9e620, type: 2}
+    Conditions:
+    - ExpectedResult: 1
       Condition: {fileID: 11400000, guid: 9be2ed694bf8e304cb1e638bb9015400, type: 2}
       Operator: 0
