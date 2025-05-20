@@ -74,6 +74,27 @@ MonoBehaviour:
     - ExpectedResult: 0
       Condition: {fileID: 11400000, guid: d126b7c8a6c30c14dae217cd6e832441, type: 2}
       Operator: 0
+  - editor_id: FROM_Attack_TO_Knockback
+    FromState: {fileID: 11400000, guid: e9b9d8ce9d2ca5343889af03ce9b8d3d, type: 2}
+    ToState: {fileID: 11400000, guid: 8fa47f8b267cbc148b214e66a906cddd, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: d126b7c8a6c30c14dae217cd6e832441, type: 2}
+      Operator: 0
+  - editor_id: FROM_Crouch_TO_Knockback
+    FromState: {fileID: 11400000, guid: 8823ad3dd5dee6e4bb60c463e8f9e620, type: 2}
+    ToState: {fileID: 11400000, guid: 8fa47f8b267cbc148b214e66a906cddd, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: d126b7c8a6c30c14dae217cd6e832441, type: 2}
+      Operator: 0
+  - editor_id: FROM_CrouchAttack_TO_Knockback
+    FromState: {fileID: 11400000, guid: 6953de0f9a04068478d77a17da346e1c, type: 2}
+    ToState: {fileID: 11400000, guid: 8fa47f8b267cbc148b214e66a906cddd, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: d126b7c8a6c30c14dae217cd6e832441, type: 2}
+      Operator: 0
   - editor_id: FROM_Knockback_TO_Default
     FromState: {fileID: 11400000, guid: 8fa47f8b267cbc148b214e66a906cddd, type: 2}
     ToState: {fileID: 11400000, guid: 41b20c1c0fe3bba46b93ea1b72124331, type: 2}
