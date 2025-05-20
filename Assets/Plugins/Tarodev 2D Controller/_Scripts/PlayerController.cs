@@ -20,6 +20,7 @@ namespace TarodevController
         //public Vector2 _movementInput = default;
         //public float _movementInputNormalized = default;
 
+        private ScriptableStats _defaultStats = null;
         private Rigidbody2D _rb;
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
@@ -194,15 +195,35 @@ namespace TarodevController
             _rb.linearVelocity = Vector2.zero;
         }
 
-        public void AddImpulse(Vector2 _force)
+        public void StartKnockBack(float _xDirection, ScriptableStats _knockbackStats)
         {
-            _rb.AddForce(_force, ForceMode2D.Impulse);
+            _frameVelocity.x = _xDirection * _knockbackStats.MaxSpeed;
+            _grounded = false;
+            SwapStats(_knockbackStats);
+            StopVelocity();
+            ExecuteJump();
         }
 
-        public bool IsMoving()
+        private void SwapStats( ScriptableStats _newStats)
         {
-            return _rb.linearVelocity.x != 0;
+            _defaultStats = _stats;
+            _stats = _newStats;
         }
+
+        public void ResetStats()
+        {
+            _stats = _defaultStats;
+        }
+
+        //public void AddImpulse(Vector2 _force)
+        //{
+        //    _rb.AddForce(_force, ForceMode2D.Impulse);
+        //}
+
+        //public bool IsMoving()
+        //{
+        //    return _rb.linearVelocity.x != 0;
+        //}
 
 #if UNITY_EDITOR
         private void OnValidate()

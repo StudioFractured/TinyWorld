@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Action_Knockback
   m_EditorClassIdentifier: 
   description: 
+  _stats: {fileID: 11400000, guid: 7c103b6f4cd6c804299833ad45ba2514, type: 2}
   _force: 10

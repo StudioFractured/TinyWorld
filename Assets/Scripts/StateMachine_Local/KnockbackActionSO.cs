@@ -6,9 +6,11 @@ using UOP1.StateMachine.ScriptableObjects;
 [CreateAssetMenu(fileName = "Action_Knockback", menuName = "SO/State Machines/Actions/Knockback")]
 public class KnockbackActionSO : StateActionSO<KnockbackAction>
 {
+    [SerializeField] ScriptableStats _stats = null;
     [SerializeField] float _force = 10f;
 
     public float Force { get => _force; }
+    public ScriptableStats Stats { get => _stats; }
 }
 
 public class KnockbackAction : StateAction
@@ -33,34 +35,34 @@ public class KnockbackAction : StateAction
 
     public override void OnStateEnter()
     {
-        _rb.gravityScale = 1;
+        //_rb.gravityScale = 1;
         _crouchHandler.EndCrouch();
         _weaponHandler.DisableShields();
 
-        // flip to damage source
-        // disable flip.
+        // flip to damageSource and disable script.
 
-        //_health.HasTakenDamageThisFrame = false;
         _health.enabled = false;
         _timer = 0f;
 
         // get last damage source position.
         var _direction = (Vector2.left + Vector2.up).normalized;
         var _force = _direction * OriginSO.Force;
-        _controller.ForceGrounded(false);
-        _controller.StopVelocity();
-        _controller.AddImpulse(_force);
+        //_controller.ForceGrounded(false);
+        //_controller.StopVelocity();
+        //_controller.AddImpulse(_force);
+        _controller.StartKnockBack(-1, OriginSO.Stats);
     }
 
     public override void OnStateExit()
     {
-        _rb.gravityScale = 0;
+        // re-enable sideFlipper script.
+        //_rb.gravityScale = 0;
         _health.enabled = true;
+        _controller.ResetStats();
     }
 
     public override void OnFixedUpdate()
     {
-        //_controller.CheckCollisions();
         _timer += Time.fixedDeltaTime;
 
         if (_timer > 0.1f)
@@ -69,12 +71,14 @@ public class KnockbackAction : StateAction
         }
 
         //_controller.HandleJump();
-        //_controller.HandleGravity();
+        //_controller.HandleDirection();
+        _controller.HandleGravity();
+        _controller.ApplyMovement();
     }
 
     public override void OnUpdate()
     {
-        //_controller.IncreaseDeltaTime();
-        //_controller.GatherInput();
+        _controller.IncreaseDeltaTime();
+        _controller.GatherInput();
     }
 }
