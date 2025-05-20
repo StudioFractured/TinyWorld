@@ -150,6 +150,7 @@ MonoBehaviour:
   _renderer: {fileID: 4292071519452491803}
   _collider: {fileID: 3030206520010725036}
   _time: 0.5
+  _input: {fileID: 7772586091523927594}
 --- !u!1 &3330313249874780226
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +371,7 @@ MonoBehaviour:
   _renderer: {fileID: 3641924313821427924}
   _collider: {fileID: 3880523448500832217}
   _time: 0.5
+  _input: {fileID: 7772586091523927594}
 --- !u!114 &6713804980678836454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +537,7 @@ MonoBehaviour:
   _renderer: {fileID: 7382442541478785883}
   _collider: {fileID: 5435967000923112967}
   _time: 0.5
+  _input: {fileID: 7772586091523927594}
 --- !u!114 &5760091053500931846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,6 +653,7 @@ GameObject:
   - component: {fileID: 1780733074494760507}
   - component: {fileID: 7771583812530609442}
   - component: {fileID: 8639340084573827914}
+  - component: {fileID: 7772586091523927594}
   - component: {fileID: 2267561453439946802}
   - component: {fileID: 7296508924212907380}
   - component: {fileID: 6954671280340619532}
@@ -820,6 +824,23 @@ MonoBehaviour:
     appendConditionsInfo: 1
     appendActionsInfo: 1
     currentState: 
+--- !u!114 &7772586091523927594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943158972980337507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc108d1b1c4c2aa4bb3c1157e61494a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _attackAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _defendAction: {fileID: 7040659881675835329, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  _move: {x: 0, y: 0}
 --- !u!114 &2267561453439946802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 40e54ad1353f724448391a4f2fe69be8, type: 2}
+  _input: {fileID: 7772586091523927594}
   _col: {fileID: 5483899800430580257}
 --- !u!114 &7296508924212907380
 MonoBehaviour:
@@ -1113,3 +1135,4 @@ MonoBehaviour:
   _renderer: {fileID: 495791755565027942}
   _collider: {fileID: 5038187475335703368}
   _time: 0.5
+  _input: {fileID: 7772586091523927594}

@@ -34,7 +34,7 @@ public class KnockbackAction : StateAction
     public override void OnStateEnter()
     {
         _crouchHandler.EndCrouch();
-        _weaponHandler.DisableShields();
+        _weaponHandler.DisableAll();
 
         var _xDirection = _health.LastDamageSource.transform.position.x >= _controller.transform.position.x ? -1f : 1f;
         _controller.StartKnockBack(_xDirection, OriginSO.Stats);

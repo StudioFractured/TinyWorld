@@ -7,11 +7,6 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField] ShieldWeapon _standShield = null;
     [SerializeField] ShieldWeapon _crouchShield = null;
 
-    public MeleeWeapon StandSword { get => _standSword; }
-    public MeleeWeapon CrouchSword { get => _crouchSword; }
-    public ShieldWeapon StandShield { get => _standShield; }
-    public ShieldWeapon CrouchShield { get => _crouchShield; }
-
     public void GatherStandInput()
     {
         if (!IsDefending())
@@ -38,7 +33,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         }
     }
 
-    public void DisableShields()
+    public void DisableAll()
     {
         _standSword.DisableCollision();
         _crouchSword.DisableCollision();

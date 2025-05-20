@@ -13,7 +13,8 @@ namespace TarodevController
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
-        [SerializeField] private ScriptableStats _stats;
+        [SerializeField] ScriptableStats _stats;
+        [SerializeField] PlayerInputHandler _input = null;
         [SerializeField] CapsuleCollider2D _col;
 
         //[Header("// READONLY")]
@@ -53,9 +54,12 @@ namespace TarodevController
         {
             _frameInput = new FrameInput
             {
-                JumpDown = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.C),
-                JumpHeld = Input.GetButton("Jump") || Input.GetKey(KeyCode.C),
-                Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
+                JumpDown = _input.JumpPerformed,
+                JumpHeld = _input.JumpPressed,
+                Move = _input.Move,
+                //JumpDown = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.C),
+                //JumpHeld = Input.GetButton("Jump") || Input.GetKey(KeyCode.C),
+                //Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
             };
 
             if (_stats.SnapInput)
@@ -204,7 +208,7 @@ namespace TarodevController
             ExecuteJump();
         }
 
-        private void SwapStats( ScriptableStats _newStats)
+        private void SwapStats(ScriptableStats _newStats)
         {
             _defaultStats = _stats;
             _stats = _newStats;

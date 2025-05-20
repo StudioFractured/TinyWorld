@@ -7,6 +7,9 @@ public class MeleeWeapon : MonoBehaviour
     [SerializeField] Collider2D _collider = null;
     [SerializeField] float _time = 0.5f;
 
+    [Header("// PLAYER")]
+    [SerializeField] protected PlayerInputHandler _input = null;
+
     private void Awake()
     {
         DisableCollision();
@@ -14,9 +17,9 @@ public class MeleeWeapon : MonoBehaviour
 
     public virtual void GatherInput()
     {
-        bool _input = Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1");
+        //bool _input = Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1");
 
-        if (_input)
+        if (_input.AttackPerformed)
         {
             Attack();
         }

@@ -26,7 +26,7 @@ public class CrouchAction : StateAction
     {
         _controller.StopVelocity();
         _crouchHandler.StartCrouch();
-        _weaponHandler.DisableShields();
+        _weaponHandler.DisableAll();
     }
 
     //public override void OnStateExit()

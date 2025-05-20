@@ -25,7 +25,7 @@ public class PlayerDefaultAction : StateAction
     public override void OnStateEnter()
     {
         _crouchHandler.EndCrouch();
-        _weaponHandler.DisableShields();
+        _weaponHandler.DisableAll();
     }
 
     public override void OnFixedUpdate()
