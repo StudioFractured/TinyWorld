@@ -365,10 +365,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shooty
       objectReference: {fileID: 0}
-    - target: {fileID: 1390172487757211690, guid: ba76c5383e7ccba4c83e4c70cb465d8d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3117321125025697859, guid: ba76c5383e7ccba4c83e4c70cb465d8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -993,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785883009915645957, guid: 54d6146272210614795a1bf497ae09ab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

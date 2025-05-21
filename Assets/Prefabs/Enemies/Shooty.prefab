@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3981682352260182499}
   - component: {fileID: 2804180881521338438}
   - component: {fileID: 2901941730838536099}
+  - component: {fileID: 3695066363862309711}
   m_Layer: 0
   m_Name: Shooty
   m_TagString: Enemy
@@ -140,10 +141,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98690a5fbdda39e45a9aa0c2100b3a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _flipper: {fileID: 3695066363862309711}
   bulletPrefab: {fileID: 823870163700170844, guid: 3d886ae16766bd442987aa97a0b4dc40, type: 3}
   firePoint: {fileID: 8913420996616349827}
   shootingRate: 3
-  shootRight: 1
+--- !u!114 &3695066363862309711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390172487757211690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6176b139e8dac2c45b93938b882eccae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 3117321125025697859}
+  _player: {fileID: 0}
 --- !u!1 &1721103007296555295
 GameObject:
   m_ObjectHideFlags: 0
