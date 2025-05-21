@@ -61,7 +61,7 @@ public class FlyingEnemy : MonoBehaviour
         }
         else
         {
-            IdleAroundBase();
+            //IdleAroundBase();
         }
     }
 
@@ -72,10 +72,10 @@ public class FlyingEnemy : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, player.position) < 1f && !onCooldown)
-        {
-            Attack();
-        }
+        //if (Vector3.Distance(transform.position, player.position) < 1f && !onCooldown)
+        //{
+        //    Attack();
+        //}
     }
 
     private void IdleAroundBase()

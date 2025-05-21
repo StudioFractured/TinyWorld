@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2804180881521338438}
   - component: {fileID: 2901941730838536099}
   - component: {fileID: 3695066363862309711}
+  - component: {fileID: 4046385162476291005}
   m_Layer: 0
   m_Name: Shooty
   m_TagString: Enemy
@@ -159,6 +160,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 3117321125025697859}
   _player: {fileID: 0}
+--- !u!114 &4046385162476291005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390172487757211690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e22b00934e7d64b8d262cf927434ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tags: {fileID: 11400000, guid: cc334079652fcf94983c61ffa4337060, type: 2}
+  _damage: 1
 --- !u!1 &1721103007296555295
 GameObject:
   m_ObjectHideFlags: 0
