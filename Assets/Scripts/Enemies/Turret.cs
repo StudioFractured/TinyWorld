@@ -2,72 +2,43 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public GameObject bulletPrefab; 
-    public Transform firePoint;     
-    public float detectionRange = 10f;
-    public float shootingRate = 1f; 
-    public GameObject player;        
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float shootingRate = 1f; // seconds between shots
+    public bool shootRight = true;  // Set to false to shoot left
 
-    private bool isPlayerInRange = false;
     private float shootingCooldown;
-
-    private void Start()
-    {
-        player = GameObject.FindWithTag("Player");
-    }
 
     private void Update()
     {
-        DetectPlayer();
         HandleShooting();
-    }
-
-    private void DetectPlayer()
-    {
-        if (player == null) return;
-
-        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-
-        if (distanceToPlayer <= detectionRange)
-        {
-            isPlayerInRange = true;
-        }
-        else
-        {
-            isPlayerInRange = false;
-        }
     }
 
     private void HandleShooting()
     {
-        if (isPlayerInRange)
+        if (shootingCooldown <= 0f)
         {
-            if (shootingCooldown <= 0f)
+            SpawnBullet();
+            shootingCooldown = shootingRate;
+        }
+
+        shootingCooldown -= Time.deltaTime;
+    }
+
+    private void SpawnBullet()
+    {
+        if (bulletPrefab != null && firePoint != null)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+            KnightSlash bulletScript = bullet.GetComponent<KnightSlash>();
+            if (bulletScript != null)
             {
-                SpawnBullet(player.transform.position);
-                shootingCooldown = shootingRate;
+                // Shoot far to the right or left so Mathf.Sign can detect direction
+                float offset = shootRight ? 10f : -10f;
+                Vector3 target = firePoint.position + new Vector3(offset, 0f, 0f);
+                bulletScript.SetTarget(target);
             }
         }
-
-        if (shootingCooldown > 0f)
-        {
-            shootingCooldown -= Time.deltaTime;
-        }
-    }
-
-    private void SpawnBullet(Vector3 targetPosition)
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        if (bulletScript != null)
-        {
-            bulletScript.SetTarget(targetPosition);
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }
