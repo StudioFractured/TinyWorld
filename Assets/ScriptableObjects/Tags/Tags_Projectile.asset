@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf1dba1af5eb2f84e9157a0371712a4d, type: 3}
-  m_Name: Action_Knockback
+  m_Script: {fileID: 11500000, guid: d74e971fee2705d498746680962642b7, type: 3}
+  m_Name: Tags_Projectile
   m_EditorClassIdentifier: 
-  description: 
-  _stats: {fileID: 11400000, guid: 7c103b6f4cd6c804299833ad45ba2514, type: 2}
+  _tags:
+  - Player
+  - Shield

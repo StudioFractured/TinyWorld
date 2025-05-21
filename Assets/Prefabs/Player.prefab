@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7180512907800162961}
   - component: {fileID: 4292071519452491803}
+  - component: {fileID: 2629034609872543814}
   - component: {fileID: 3030206520010725036}
   - component: {fileID: 7217887175756281716}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,6 +90,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2629034609872543814
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086585814435624473}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &3030206520010725036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,7 +151,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +161,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7217887175756281716
 MonoBehaviour:
@@ -230,6 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5628214663107158262}
   - component: {fileID: 3641924313821427924}
+  - component: {fileID: 5108445741881005890}
   - component: {fileID: 3880523448500832217}
   - component: {fileID: 4862029122781173080}
   - component: {fileID: 6713804980678836454}
@@ -310,6 +339,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &5108445741881005890
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437652369258061668}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &3880523448500832217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -386,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tags: {fileID: 11400000, guid: 1744e69fc6e0c5c4395b99575033e158, type: 2}
   _damage: 1
+  _destroyOnHit: 0
 --- !u!1 &4997690411131551315
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5608576708292694909}
   - component: {fileID: 7382442541478785883}
+  - component: {fileID: 6300744074080711605}
   - component: {fileID: 5435967000923112967}
   - component: {fileID: 5156024516102663210}
   - component: {fileID: 5760091053500931846}
@@ -476,6 +534,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &6300744074080711605
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4997690411131551315}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &5435967000923112967
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -552,6 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tags: {fileID: 11400000, guid: 1744e69fc6e0c5c4395b99575033e158, type: 2}
   _damage: 1
+  _destroyOnHit: 0
 --- !u!1 &5667574590615837323
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,8 +989,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d0fd0e82812a845b69704456e055b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxValue: 3
-  _initialValue: 3
+  _maxValue: 10
+  _initialValue: 10
   _currentValue: 0
   _lastDamageSource: {fileID: 0}
   _hasTakenDamageThisFrame: 0
@@ -985,11 +1071,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1623624978955187787}
   - component: {fileID: 495791755565027942}
+  - component: {fileID: 3882625714336411990}
   - component: {fileID: 5038187475335703368}
   - component: {fileID: 7154429082323215354}
   m_Layer: 0
   m_Name: Shield_Crouch
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1064,6 +1151,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &3882625714336411990
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8674827947259162117}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &5038187475335703368
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1098,7 +1212,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1108,7 +1222,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7154429082323215354
 MonoBehaviour:
