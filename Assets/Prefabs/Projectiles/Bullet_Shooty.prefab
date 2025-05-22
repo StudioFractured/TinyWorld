@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4135261371138426961}
   - component: {fileID: 4665682433067120134}
   - component: {fileID: -1521537423538796829}
+  - component: {fileID: 9048423996183553991}
   m_Layer: 0
   m_Name: Bullet_Shooty
   m_TagString: Untagged
@@ -70,7 +71,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.49999997
+  m_Radius: 0.2
 --- !u!212 &4135261371138426961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 1951884249
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -5239988057186889908, guid: bf26b189f73dc8e4dac523258a6607e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,7 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4573abd5843fbb48b749a14d2c6f69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
+  _useSign: 1
 --- !u!114 &-1521537423538796829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +156,25 @@ MonoBehaviour:
   _tags: {fileID: 11400000, guid: c53c1a7c94011f140b8d7f68878e3cc6, type: 2}
   _damage: 1
   _destroyOnHit: 1
+--- !u!95 &9048423996183553991
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2564626206484613873}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ba9e9e4f8204584da5f6ea9112dc422, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
