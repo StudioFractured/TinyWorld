@@ -142,8 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basePoint: {fileID: 8488679723623662664}
   player: {fileID: 0}
-  bulletPrefab: {fileID: 2564626206484613873, guid: a7e09012b8f9cdf48b4ef775106db139, type: 3}
+  bulletPrefab: {fileID: 4665682433067120134, guid: a7e09012b8f9cdf48b4ef775106db139, type: 3}
   firePoint: {fileID: 3089924528503263715}
+  _mover: {fileID: 0}
   idleSpeed: 2
   hoverSpeed: 2
   hoverHeight: 0.5
@@ -151,6 +152,7 @@ MonoBehaviour:
   idleTargetRefreshTime: 3
   attackRange: 10
   fireCooldown: 1.5
+  _frozeDuration: 0.3
   isFrozen: 0
 --- !u!1 &4890380733045579592
 GameObject:

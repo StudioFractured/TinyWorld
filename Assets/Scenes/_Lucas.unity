@@ -1260,6 +1260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 4769640722537838702, guid: d88ab56679ed9004c9749c295e647f9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8488679723623662664, guid: d88ab56679ed9004c9749c295e647f9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12
