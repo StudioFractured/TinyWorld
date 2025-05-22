@@ -39,7 +39,8 @@ public class Knight : MonoBehaviour, IReactOnHit
     private Rigidbody2D rb;
     private Vector2 dashDirection;
     public bool isFrozen = false;
-        public void ReactToHit()
+
+    public void ReactToHit()
     {
         StartCoroutine(FreezeMovement(0.1f));
     }
@@ -89,8 +90,8 @@ public class Knight : MonoBehaviour, IReactOnHit
         if (Vector2.Distance(transform.position, target) < 0.1f)
         {
             movingRight = !movingRight;
-            if (flipOnTurn)
-                Flip();
+            //if (flipOnTurn)
+            //    Flip();
         }
     }
 
@@ -186,4 +187,3 @@ public class Knight : MonoBehaviour, IReactOnHit
         Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }
- 
