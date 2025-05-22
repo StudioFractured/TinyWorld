@@ -16,12 +16,19 @@ public class DamageOnHit : MonoBehaviour
             _health.TakeDamage(gameObject, _damage);
         }
 
+        if (_other.TryGetComponent<IReactOnHit>(out var reactable))
+        {
+            reactable.ReactToHit();
+        }
+
         if (_destroyOnHit)
         {
             var _task = DestroyAsync();
             gameObject.SetActive(false);
         }
     }
+
+
 
     private async Task DestroyAsync()
     {
