@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 1309584903878610872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.99, y: -3.84, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -183,6 +183,7 @@ MonoBehaviour:
   dashDuration: 0.4
   attackCooldown: 2
   flipOnTurn: 1
+  isFrozen: 0
 --- !u!1 &8584951817741266786
 GameObject:
   m_ObjectHideFlags: 0

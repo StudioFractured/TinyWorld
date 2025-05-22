@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1390172487757211690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.9, y: -3.98, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.6375, y: 1.3425351, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -143,9 +143,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flipper: {fileID: 3695066363862309711}
-  bulletPrefab: {fileID: 823870163700170844, guid: 3d886ae16766bd442987aa97a0b4dc40, type: 3}
+  _bulletPrefab: {fileID: 4665682433067120134, guid: a7e09012b8f9cdf48b4ef775106db139, type: 3}
   firePoint: {fileID: 8913420996616349827}
   shootingRate: 3
+  isFrozen: 0
 --- !u!114 &3695066363862309711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tags: {fileID: 11400000, guid: cc334079652fcf94983c61ffa4337060, type: 2}
   _damage: 1
+  _destroyOnHit: 0
 --- !u!1 &1721103007296555295
 GameObject:
   m_ObjectHideFlags: 0

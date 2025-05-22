@@ -9,10 +9,14 @@ public class Worm : MonoBehaviour, IReactOnHit
 
     private Vector2 startPos;          // Initial position
     private bool movingRight = true;   // Direction flag
-    public bool isFrozen = false;
+
+    [Header("// FREEZE")]
+    [SerializeField] float _frozeDuration = 0.3f;
+    [SerializeField] bool isFrozen = false;
+
     public void ReactToHit()
     {
-        StartCoroutine(FreezeMovement(0.1f));
+        StartCoroutine(FreezeMovement(_frozeDuration));
     }
 
     private IEnumerator FreezeMovement(float duration)

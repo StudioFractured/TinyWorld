@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 6412176191055312121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.9, y: -3.89, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -266,6 +266,7 @@ MonoBehaviour:
   arcBulletPrefab: {fileID: 732470318732670508, guid: cddf894c0b8001440ba2fca65dabb4f1, type: 3}
   firePoint: {fileID: 4119606333162360109}
   playerTag: Player
+  isFrozen: 0
 --- !u!1 &8617297543140383212
 GameObject:
   m_ObjectHideFlags: 0

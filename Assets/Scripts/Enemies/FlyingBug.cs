@@ -21,13 +21,16 @@ public class FlyingEnemy : MonoBehaviour, IReactOnHit
     [Header("Attack")]
     public float attackCooldown = 2f;
 
+    [Header("// FREEZE")]
+    [SerializeField] float _frozeDuration = 0.3f;
+    [SerializeField] bool isFrozen = false;
+
     private bool onCooldown = false;
     private float cooldownTimer = 0f;
 
     private float hoverOffset;
     private Vector3 idleTarget;
     private float idleTimer;
-    public bool isFrozen = false;
 
     private void Start()
     {
@@ -125,7 +128,7 @@ public class FlyingEnemy : MonoBehaviour, IReactOnHit
 
     public void ReactToHit()
     {
-        StartCoroutine(FreezeMovement(0.1f));
+        StartCoroutine(FreezeMovement(_frozeDuration));
     }
 
     private IEnumerator FreezeMovement(float duration)

@@ -4,7 +4,8 @@ using System.Collections;
 public class Turret : MonoBehaviour, IReactOnHit
 {
     [SerializeField] SideFlipper _flipper = null;
-    public GameObject bulletPrefab;
+    //public GameObject bulletPrefab;
+    [SerializeField] Bullet _bulletPrefab = null;
     public Transform firePoint;
     public float shootingRate = 1f; // seconds between shots
     //public bool shootRight = true;  // Set to false to shoot left
@@ -42,19 +43,15 @@ public class Turret : MonoBehaviour, IReactOnHit
 
     private void SpawnBullet()
     {
-        if (bulletPrefab != null && firePoint != null)
+        if (_bulletPrefab != null && firePoint != null)
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            var _bulletInstance = Instantiate(_bulletPrefab, firePoint.position, Quaternion.identity);
 
-            KnightSlash bulletScript = bullet.GetComponent<KnightSlash>();
-            if (bulletScript != null)
-            {
-                // Shoot far to the right or left so Mathf.Sign can detect direction
-                //float offset = shootRight ? 10f : -10f;
-                float offset = _flipper.IsFacingRight() ? 10f : -10f;
-                Vector3 target = firePoint.position + new Vector3(offset, 0f, 0f);
-                bulletScript.SetTarget(target);
-            }
+            // Shoot far to the right or left so Mathf.Sign can detect direction
+            // float offset = shootRight ? 10f : -10f;
+            float offset = _flipper.IsFacingRight() ? 10f : -10f;
+            Vector3 target = firePoint.position + new Vector3(offset, 0f, 0f);
+            _bulletInstance.SetTarget(target);
         }
     }
 }

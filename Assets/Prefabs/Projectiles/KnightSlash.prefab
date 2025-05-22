@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8468307618691979842}
   - component: {fileID: 3331149438437513054}
   - component: {fileID: 8647106775805618224}
-  - component: {fileID: 4504846105818094930}
+  - component: {fileID: -3911132595863413329}
   - component: {fileID: 4660627913498504076}
   m_Layer: 0
   m_Name: KnightSlash
@@ -112,8 +112,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1951884249
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -126,7 +126,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4504846105818094930
+--- !u!114 &-3911132595863413329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 823870163700170844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5916342887f0d49bcd1b080fcda517, type: 3}
+  m_Script: {fileID: 11500000, guid: b4573abd5843fbb48b749a14d2c6f69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10

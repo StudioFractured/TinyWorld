@@ -5,22 +5,17 @@ using System.Collections.Generic;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
-    private GameObject bullet;
     private Vector3 direction;
 
     public void SetTarget(Vector3 target)
     {
-        direction = (target - transform.position).normalized;
-        Destroy(bullet, 10);
+        float dirX = Mathf.Sign(target.x - transform.position.x);
+        direction = new Vector3(dirX, 0f, 0f);
+        Destroy(gameObject, 10f);
     }
 
     private void Update()
     {
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += speed * Time.deltaTime * direction;
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Destroy(gameObject);
-    //}
 }

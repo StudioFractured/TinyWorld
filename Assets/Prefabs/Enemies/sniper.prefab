@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2021922387800811909}
   - component: {fileID: 9185495807910785191}
   m_Layer: 0
-  m_Name: sniper
+  m_Name: Sniper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4769640722537838702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.75, y: 4.78, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 1.925, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,6 +151,7 @@ MonoBehaviour:
   idleTargetRefreshTime: 3
   attackRange: 10
   fireCooldown: 1.5
+  isFrozen: 0
 --- !u!1 &4890380733045579592
 GameObject:
   m_ObjectHideFlags: 0

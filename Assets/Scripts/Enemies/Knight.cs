@@ -15,7 +15,7 @@ public class Knight : MonoBehaviour, IReactOnHit
     private Transform player;
 
     [Header("Charge & Attack Settings")]
-    public GameObject bulletPref;
+    public Bullet bulletPrefab;
     public Transform slashPoint;
     public float chargeDuration = 1f;
     public float raycastLength = 10f;
@@ -143,16 +143,11 @@ public class Knight : MonoBehaviour, IReactOnHit
 
     private IEnumerator Attack()
     {
-        if (bulletPref != null)
+        if (bulletPrefab != null)
         {
             Vector3 spawnPosition = new Vector3(slashPoint.position.x, -2f, 0);
-            GameObject bullet = Instantiate(bulletPref, spawnPosition, Quaternion.identity);
-
-            KnightSlash bulletScript = bullet.GetComponent<KnightSlash>();
-            if (bulletScript != null)
-            {
-                bulletScript.SetTarget(new Vector2(dashDirection.x, 0f));
-            }
+            var _bulletInstance = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
+            _bulletInstance.SetTarget(new Vector2(dashDirection.x, 0f));
         }
 
         yield return new WaitForSeconds(attackCooldown);
