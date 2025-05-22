@@ -5,12 +5,23 @@ using System.Collections.Generic;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
+    [SerializeField] bool _useSign = true;
+
     private Vector3 direction;
 
     public void SetTarget(Vector3 target)
     {
-        float dirX = Mathf.Sign(target.x - transform.position.x);
-        direction = new Vector3(dirX, 0f, 0f);
+        if (_useSign)
+        {
+            float dirX = Mathf.Sign(target.x - transform.position.x);
+            direction = new Vector3(dirX, 0f, 0f);
+        }
+        else
+        {
+            var _targetDirection = (target - transform.position).normalized;
+            direction = _targetDirection;
+        }
+
         Destroy(gameObject, 10f);
     }
 

@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class Ranger : MonoBehaviour, IReactOnHit
+public class Sniper : MonoBehaviour, IReactOnHit
 {
     [Header("References")]
     public Transform basePoint;
     public Transform player;
-    public GameObject bulletPrefab;
+    public Bullet bulletPrefab;
     public Transform firePoint;
+    [SerializeField] MoveInsideArea _mover = null;
 
     [Header("Movement")]
     public float idleSpeed = 2f;
@@ -25,10 +26,15 @@ public class Ranger : MonoBehaviour, IReactOnHit
     private float fireTimer;
     private float hoverOffset;
     private float baseY;
-    public bool isFrozen = false;
+
+    [Header("// FREEZE")]
+    [SerializeField] float _frozeDuration = 0.3f;
+    [SerializeField] bool isFrozen = false;
+
     public void ReactToHit()
     {
-        StartCoroutine(FreezeMovement(0.1f));
+        StartCoroutine(FreezeMovement(_frozeDuration));
+        _mover.StopMoving(_frozeDuration);
     }
 
     private IEnumerator FreezeMovement(float duration)
@@ -57,14 +63,15 @@ public class Ranger : MonoBehaviour, IReactOnHit
     private void Update()
     {
         if (isFrozen) return;
+        if (_mover.IsMoving()) return;
         if (player == null) return;
 
         float distanceToPlayer = Vector3.Distance(player.position, transform.position);
         fireTimer -= Time.deltaTime;
 
         // Calculate vertical hover
-        float hoverY = Mathf.Sin(Time.time * hoverSpeed + hoverOffset) * hoverHeight;
-        float newY = basePoint.position.y + hoverY;
+        //float hoverY = Mathf.Sin(Time.time * hoverSpeed + hoverOffset) * hoverHeight;
+        //float newY = basePoint.position.y + hoverY;
 
         if (distanceToPlayer <= attackRange)
         {
@@ -75,7 +82,7 @@ public class Ranger : MonoBehaviour, IReactOnHit
             }
 
             // Apply hover while staying in place
-            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+            //transform.position = new Vector3(transform.position.x, newY, transform.position.z);
         }
         //else
         //{
@@ -107,12 +114,8 @@ public class Ranger : MonoBehaviour, IReactOnHit
     {
         if (bulletPrefab == null || firePoint == null) return;
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Bullet bulletScript = bullet.GetComponent<Bullet>();
-        if (bulletScript != null)
-        {
-            bulletScript.SetTarget(player.position);
-        }
+        var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        bullet.SetTarget(player.position);
     }
 
     private void OnDrawGizmosSelected()
