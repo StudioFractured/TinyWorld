@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Thrower : MonoBehaviour
+public class Thrower : MonoBehaviour, IReactOnHit
 {
     [Header("Movement")]
     public float speed = 2f;
@@ -19,6 +19,18 @@ public class Thrower : MonoBehaviour
     private bool movingRight = true;
     private bool canAttack = true;
     private Transform player;
+    public bool isFrozen = false;
+    public void ReactToHit()
+    {
+        StartCoroutine(FreezeMovement(0.1f));
+    }
+
+    private IEnumerator FreezeMovement(float duration)
+    {
+        isFrozen = true;
+        yield return new WaitForSeconds(duration);
+        isFrozen = false;
+    }
 
     void Start()
     {
@@ -27,6 +39,7 @@ public class Thrower : MonoBehaviour
 
     void Update()
     {
+        if (isFrozen) return;
         if (player == null)
             player = GameObject.FindGameObjectWithTag(playerTag)?.transform;
 

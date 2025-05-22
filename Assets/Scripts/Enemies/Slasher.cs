@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyCharger : MonoBehaviour
+public class EnemyCharger : MonoBehaviour, IReactOnHit
 {
     [Header("Patrol Settings")]
     public float patrolSpeed = 2f;
@@ -29,6 +29,18 @@ public class EnemyCharger : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 dashDirection;
+    public bool isFrozen = false;
+    public void ReactToHit()
+    {
+        StartCoroutine(FreezeMovement(0.1f));
+    }
+
+    private IEnumerator FreezeMovement(float duration)
+    {
+        isFrozen = true;
+        yield return new WaitForSeconds(duration);
+        isFrozen = false;
+    }
 
     private void Start()
     {
@@ -38,6 +50,7 @@ public class EnemyCharger : MonoBehaviour
 
     private void Update()
     {
+        if (isFrozen) return;
         if (isDashing) return;
 
         GameObject player = GameObject.FindWithTag(playerTag);

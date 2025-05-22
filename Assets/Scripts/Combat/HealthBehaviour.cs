@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -65,6 +66,12 @@ public class HealthBehaviour : MonoBehaviour
 
     public virtual void Die()
     {
+        StartCoroutine(DIEE());        
+    }
+
+    private IEnumerator DIEE()
+    {
+        yield return new WaitForSeconds(0.15f);
         OnDie?.Invoke();
         gameObject.SetActive(false);
     }

@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections;
 
-public class Turret : MonoBehaviour
+public class Turret : MonoBehaviour, IReactOnHit
 {
     [SerializeField] SideFlipper _flipper = null;
     public GameObject bulletPrefab;
@@ -9,9 +10,22 @@ public class Turret : MonoBehaviour
     //public bool shootRight = true;  // Set to false to shoot left
 
     private float shootingCooldown;
+    public bool isFrozen = false;
+    public void ReactToHit()
+    {
+        StartCoroutine(FreezeMovement(0.1f));
+    }
+
+    private IEnumerator FreezeMovement(float duration)
+    {
+        isFrozen = true;
+        yield return new WaitForSeconds(duration);
+        isFrozen = false;
+    }
 
     private void Update()
     {
+        if (isFrozen) return;
         HandleShooting();
     }
 

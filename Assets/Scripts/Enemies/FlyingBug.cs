@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections;
 
-public class FlyingEnemy : MonoBehaviour
+public class FlyingEnemy : MonoBehaviour, IReactOnHit
 {
     [Header("References")]
     public Transform basePoint;
@@ -26,6 +27,7 @@ public class FlyingEnemy : MonoBehaviour
     private float hoverOffset;
     private Vector3 idleTarget;
     private float idleTimer;
+    public bool isFrozen = false;
 
     private void Start()
     {
@@ -44,6 +46,7 @@ public class FlyingEnemy : MonoBehaviour
 
     private void Update()
     {
+        if (isFrozen) return;
         if (player == null) return;
 
         float distanceToPlayer = Vector3.Distance(player.position, basePoint.position);
@@ -118,5 +121,17 @@ public class FlyingEnemy : MonoBehaviour
         Gizmos.color = Color.yellow;
         if (basePoint != null)
             Gizmos.DrawWireSphere(basePoint.position, idleRange);
+    }
+
+    public void ReactToHit()
+    {
+        StartCoroutine(FreezeMovement(0.1f));
+    }
+
+    private IEnumerator FreezeMovement(float duration)
+    {
+        isFrozen = true;
+        yield return new WaitForSeconds(duration);
+        isFrozen = false;
     }
 }

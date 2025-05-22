@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Worm : MonoBehaviour
+public class Worm : MonoBehaviour, IReactOnHit
 {
     [Header("Movement")]
     public float speed = 2f;           // Movement speed
@@ -9,6 +9,18 @@ public class Worm : MonoBehaviour
 
     private Vector2 startPos;          // Initial position
     private bool movingRight = true;   // Direction flag
+    public bool isFrozen = false;
+    public void ReactToHit()
+    {
+        StartCoroutine(FreezeMovement(0.1f));
+    }
+
+    private IEnumerator FreezeMovement(float duration)
+    {
+        isFrozen = true;
+        yield return new WaitForSeconds(duration);
+        isFrozen = false;
+    }
 
     void Start()
     {
@@ -17,6 +29,7 @@ public class Worm : MonoBehaviour
 
     void Update()
     {
+        if (isFrozen) return;
         float targetX = movingRight ? startPos.x + offset : startPos.x - offset;
 
         // Move towards targetX

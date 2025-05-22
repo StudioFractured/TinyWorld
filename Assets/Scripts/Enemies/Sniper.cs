@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections;
 
-public class Ranger : MonoBehaviour
+public class Ranger : MonoBehaviour, IReactOnHit
 {
     [Header("References")]
     public Transform basePoint;
@@ -24,6 +25,18 @@ public class Ranger : MonoBehaviour
     private float fireTimer;
     private float hoverOffset;
     private float baseY;
+    public bool isFrozen = false;
+    public void ReactToHit()
+    {
+        StartCoroutine(FreezeMovement(0.1f));
+    }
+
+    private IEnumerator FreezeMovement(float duration)
+    {
+        isFrozen = true;
+        yield return new WaitForSeconds(duration);
+        isFrozen = false;
+    }
 
     private void Start()
     {
@@ -43,6 +56,7 @@ public class Ranger : MonoBehaviour
 
     private void Update()
     {
+        if (isFrozen) return;
         if (player == null) return;
 
         float distanceToPlayer = Vector3.Distance(player.position, transform.position);

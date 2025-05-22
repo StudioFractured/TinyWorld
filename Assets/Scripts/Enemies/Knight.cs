@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Knight : MonoBehaviour
+public class Knight : MonoBehaviour, IReactOnHit
 {
     [Header("Patrol Settings")]
     public float patrolSpeed = 2f;
@@ -38,6 +38,18 @@ public class Knight : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 dashDirection;
+    public bool isFrozen = false;
+        public void ReactToHit()
+    {
+        StartCoroutine(FreezeMovement(0.1f));
+    }
+
+    private IEnumerator FreezeMovement(float duration)
+    {
+        isFrozen = true;
+        yield return new WaitForSeconds(duration);
+        isFrozen = false;
+    }
 
     private void Start()
     {
@@ -52,6 +64,7 @@ public class Knight : MonoBehaviour
 
     private void Update()
     {
+        if (isFrozen) return;
         if (isDashing) return;
 
         if (player == null) return;
