@@ -77,10 +77,10 @@ public class Ranger : MonoBehaviour, IReactOnHit
             // Apply hover while staying in place
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
         }
-        else
-        {
-            IdleMovement(newY);
-        }
+        //else
+        //{
+        //    IdleMovement(newY);
+        //}
     }
 
     private void IdleMovement(float hoverY)

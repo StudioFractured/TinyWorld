@@ -19,10 +19,14 @@ public class Thrower : MonoBehaviour, IReactOnHit
     private bool movingRight = true;
     private bool canAttack = true;
     private Transform player;
-    public bool isFrozen = false;
+
+    [Header("// FREEZE")]
+    [SerializeField] float _frozeDuration = 0.3f;
+    [SerializeField] bool isFrozen = false;
+
     public void ReactToHit()
     {
-        StartCoroutine(FreezeMovement(0.1f));
+        StartCoroutine(FreezeMovement(_frozeDuration));
     }
 
     private IEnumerator FreezeMovement(float duration)
@@ -62,9 +66,9 @@ public class Thrower : MonoBehaviour, IReactOnHit
         if (Vector3.Distance(transform.position, targetPos) < 0.01f)
         {
             movingRight = !movingRight;
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
+            //Vector3 scale = transform.localScale;
+            //scale.x *= -1;
+            //transform.localScale = scale;
         }
     }
 
