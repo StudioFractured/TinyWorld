@@ -5,6 +5,7 @@ public class SpawnOnDie : MonoBehaviour
     [SerializeField] HealthBehaviour _health = null;
     [SerializeField] GameObject _prefab = null;
     [SerializeField] Transform _spawnPoint = null;
+    [SerializeField] Vector2 _offset = default;
 
     private void OnEnable()
     {
@@ -18,6 +19,6 @@ public class SpawnOnDie : MonoBehaviour
 
     public void Play()
     {
-        Instantiate(_prefab, _spawnPoint.position, Quaternion.identity);
+        Instantiate(_prefab, (Vector2)_spawnPoint.position + _offset, Quaternion.identity);
     }
 }
