@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -28,11 +29,14 @@ public class DamageOnHit : MonoBehaviour
         }
     }
 
-
-
     private async Task DestroyAsync()
     {
         await Task.Delay(1000);
         Destroy(gameObject);
+    }
+
+    public void IncreaseDamage()
+    {
+        _damage++;
     }
 }

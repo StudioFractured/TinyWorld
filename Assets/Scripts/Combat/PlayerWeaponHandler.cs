@@ -1,11 +1,16 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
     [SerializeField] MeleeWeapon _standSword = null;
     [SerializeField] MeleeWeapon _crouchSword = null;
+    [Space]
     [SerializeField] ShieldWeapon _standShield = null;
     [SerializeField] ShieldWeapon _crouchShield = null;
+    [Space]
+    [SerializeField] List<DamageOnHit> _damageAgents = null;
 
     public void GatherStandInput()
     {
@@ -49,5 +54,15 @@ public class PlayerWeaponHandler : MonoBehaviour
     public bool IsDefending()
     {
         return _standShield.IsAttacking() || _crouchShield.IsAttacking();
+    }
+
+    public void IncreaseDamage()
+    {
+        int _count = _damageAgents.Count;
+
+        for (int i = 0; i < _count; i++)
+        {
+            _damageAgents[i].IncreaseDamage();
+        }
     }
 }

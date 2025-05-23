@@ -962,6 +962,9 @@ MonoBehaviour:
   _crouchSword: {fileID: 5156024516102663210}
   _standShield: {fileID: 7217887175756281716}
   _crouchShield: {fileID: 7154429082323215354}
+  _damageAgents:
+  - {fileID: 6713804980678836454}
+  - {fileID: 5760091053500931846}
 --- !u!114 &1303340540709385551
 MonoBehaviour:
   m_ObjectHideFlags: 0
