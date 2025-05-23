@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,36 +16,46 @@ public class HealthBehaviour : MonoBehaviour
     public event UnityAction<float> OnDamageTaken = null;
     public event UnityAction OnDie = null;
 
-    public GameObject LastDamageSource { get => _lastDamageSource; }
-    public bool HasTakenDamageThisFrame { get => _hasTakenDamageThisFrame; }
+    public GameObject LastDamageSource => _lastDamageSource;
+    public bool HasTakenDamageThisFrame => _hasTakenDamageThisFrame;
+
+    [Header("Damage Flash Settings")]
+    public Color FlashColor = Color.white;
+    public float FlashTime = 0.1f;
+
+    private SpriteRenderer _spriteRenderer;
+    private Material _material;
 
     private void Awake()
     {
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _material = new Material(_spriteRenderer.material);
+        _spriteRenderer.material = _material; // ✅ Assign the material back
+
         ResetValue();
     }
 
     private void LateUpdate()
     {
-        if (_hasTakenDamageThisFrame)
-        {
-            _hasTakenDamageThisFrame = false;
-        }
+        _hasTakenDamageThisFrame = false;
     }
 
-    public void RestoreHealth(float _value)
+    public void RestoreHealth(float value)
     {
-        _currentValue += _value;
+        _currentValue += value;
         _currentValue = Mathf.Clamp(_currentValue, 0f, _maxValue);
         OnHealed?.Invoke(_currentValue);
     }
 
-    public void TakeDamage(GameObject _source, float _value)
+    public void TakeDamage(GameObject source, float value)
     {
         if (!enabled) return;
 
-        _lastDamageSource = _source;
-        _currentValue -= _value;
+        _lastDamageSource = source;
+        _currentValue -= value;
         _currentValue = Mathf.Clamp(_currentValue, 0f, _maxValue);
+
+        StartCoroutine(DamageFlash()); // ✅ Correctly start the coroutine
 
         if (_currentValue <= 0)
         {
@@ -65,10 +75,10 @@ public class HealthBehaviour : MonoBehaviour
 
     public virtual void Die()
     {
-        StartCoroutine(DIEE());        
+        StartCoroutine(DelayedDeath());
     }
 
-    private IEnumerator DIEE()
+    private IEnumerator DelayedDeath()
     {
         yield return new WaitForSeconds(0.15f);
         OnDie?.Invoke();
@@ -85,5 +95,48 @@ public class HealthBehaviour : MonoBehaviour
     public void TakeDamage()
     {
         TakeDamage(gameObject, 0);
+    }
+
+    private IEnumerator DamageFlash()
+    {
+        SetFlashColor();
+
+        float flashInDuration = 0.1f;
+        float holdDuration = 0.25f;
+        float flashOutDuration = 0.1f;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < flashInDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float currentFlashAmount = Mathf.Lerp(0.5f, 10.0f, elapsedTime / flashInDuration);
+            SetFlashAmount(currentFlashAmount);
+            yield return null;
+        }
+
+        SetFlashAmount(10.0f);
+        yield return new WaitForSeconds(holdDuration);
+
+        elapsedTime = 0f;
+        while (elapsedTime < flashOutDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float currentFlashAmount = Mathf.Lerp(10.0f, 0.5f, elapsedTime / flashOutDuration);
+            SetFlashAmount(currentFlashAmount);
+            yield return null;
+        }
+
+        SetFlashAmount(0.5f);
+    }
+
+
+    private void SetFlashColor()
+    {
+        _material.SetColor("_FlashColor", FlashColor);
+    }
+
+    private void SetFlashAmount(float amount)
+    {
+        _material.SetFloat("_FlashAmount", amount);
     }
 }
