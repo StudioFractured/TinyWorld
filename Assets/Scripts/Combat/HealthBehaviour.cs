@@ -78,6 +78,6 @@ public class HealthBehaviour : MonoBehaviour
     [ContextMenu("// TakeDamage()")]
     public void TakeDamage()
     {
-        TakeDamage(null, 0);
+        TakeDamage(gameObject, 0);
     }
 }
