@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class HealthCollectable : AbstractCollectable
+public class IncreaseMaxHealthCollectable : AbstractCollectable
 {
-    [SerializeField] float _restoreValue = 1f;
-
     public override void OnCollect(Collider2D _colliderHit)
     {
         if (_colliderHit.TryGetComponent(out HealthBehaviour _health))
         {
-            _health.RestoreHealth(_restoreValue);
+            _health.IncreaseMaxValue();
             Destroy(gameObject);
         }
     }

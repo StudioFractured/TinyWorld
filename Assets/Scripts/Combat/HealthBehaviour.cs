@@ -75,6 +75,12 @@ public class HealthBehaviour : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void IncreaseMaxValue()
+    {
+        _maxValue++;
+        RestoreHealth(1);
+    }
+
     [ContextMenu("// TakeDamage()")]
     public void TakeDamage()
     {

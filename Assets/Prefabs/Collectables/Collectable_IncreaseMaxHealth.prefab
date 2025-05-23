@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4667710204521569039, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
       propertyPath: m_Color.b
-      value: 0.19999999
+      value: 0.73333323
       objectReference: {fileID: 0}
     - target: {fileID: 4667710204521569039, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
       propertyPath: m_Color.g
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5839430159408688284, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
       propertyPath: m_Name
-      value: Collectable_Health
+      value: Collectable_HealthBuff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70,14 +70,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5839430159408688284, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4894346587283345857}
+      addedObject: {fileID: 6667725618672260487}
   m_SourcePrefab: {fileID: 100100000, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
 --- !u!1 &7352027571303653580 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5839430159408688284, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
   m_PrefabInstance: {fileID: 3967236779939941456}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4894346587283345857
+--- !u!114 &6667725618672260487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,8 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7352027571303653580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad2b19ea54ffafe4aad5d1391cbcd821, type: 3}
+  m_Script: {fileID: 11500000, guid: f8d0d617a9005b145ae87815cddc8c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tags: {fileID: 11400000, guid: cc334079652fcf94983c61ffa4337060, type: 2}
-  _restoreValue: 1
+  _tags: {fileID: 11400000, guid: df3bf651d68e53841ab33d442d1ae122, type: 2}
