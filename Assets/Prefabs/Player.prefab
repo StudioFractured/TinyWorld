@@ -741,10 +741,10 @@ GameObject:
   - component: {fileID: 8639340084573827914}
   - component: {fileID: 7772586091523927594}
   - component: {fileID: 2267561453439946802}
-  - component: {fileID: 7296508924212907380}
   - component: {fileID: 6954671280340619532}
   - component: {fileID: 1303340540709385551}
   - component: {fileID: 6815902453125264030}
+  - component: {fileID: 4656437199929839321}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -932,20 +932,6 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 40e54ad1353f724448391a4f2fe69be8, type: 2}
   _input: {fileID: 7772586091523927594}
   _col: {fileID: 5483899800430580257}
---- !u!114 &7296508924212907380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6943158972980337507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32a2abd7442fd34dbfeb4f776c7ae3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 395022085557045353}
-  _rb: {fileID: 5196733177470246697}
 --- !u!114 &6954671280340619532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,6 +983,22 @@ MonoBehaviour:
   _currentValue: 0
   _lastDamageSource: {fileID: 0}
   _hasTakenDamageThisFrame: 0
+  FlashColor: {r: 1, g: 1, b: 1, a: 1}
+  FlashTime: 0.1
+--- !u!114 &4656437199929839321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943158972980337507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cb00066f9a1e442b2cde807c110f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 395022085557045353}
+  _input: {fileID: 7772586091523927594}
 --- !u!1 &7792777339260106606
 GameObject:
   m_ObjectHideFlags: 0
