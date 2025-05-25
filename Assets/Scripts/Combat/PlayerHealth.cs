@@ -1,30 +1,45 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+using Unity.Cinemachine;
 
 public class PlayerHealth : HealthBehaviour
 {
     public Transform gridParent;
     public GameObject hpPrefab;
 
-    private float lastValue;
+    private int lastValue;
     private List<GameObject> hpObjects = new List<GameObject>();
+
+    public CinemachineCamera virtualCam;
+    private CinemachinePositionComposer positionComposer;
+
+    public float duration;
+    public float intensity;
 
     private void Start()
     {
-        lastValue = _currentValue;
+        lastValue = Mathf.FloorToInt(_currentValue);
 
-        for (int i = 0; i < _currentValue; i++)
+        for (int i = 0; i < lastValue; i++)
         {
             GameObject hp = Instantiate(hpPrefab, gridParent);
             hpObjects.Add(hp);
+        }
+
+        if (virtualCam != null)
+        {
+            positionComposer = virtualCam.GetComponent<CinemachinePositionComposer>();
         }
     }
 
     private void Update()
     {
-        if (_currentValue > lastValue)
+        int currentValueInt = Mathf.FloorToInt(_currentValue);
+
+        if (currentValueInt > lastValue)
         {
-            float difference = _currentValue - lastValue;
+            int difference = currentValueInt - lastValue;
 
             for (int i = 0; i < difference; i++)
             {
@@ -32,9 +47,9 @@ public class PlayerHealth : HealthBehaviour
                 hpObjects.Add(hp);
             }
         }
-        else if (_currentValue < lastValue)
+        else if (currentValueInt < lastValue)
         {
-            float difference = lastValue - _currentValue;
+            int difference = lastValue - currentValueInt;
 
             for (int i = 0; i < difference; i++)
             {
@@ -47,6 +62,33 @@ public class PlayerHealth : HealthBehaviour
             }
         }
 
-        lastValue = _currentValue;
+        lastValue = currentValueInt;
+    }
+
+    public void ShakeCam()
+    {
+        if (positionComposer != null)
+        {
+            StartCoroutine(ShakeCoroutine());
+        }
+    }
+
+    private IEnumerator ShakeCoroutine()
+    {
+        Vector3 originalOffset = positionComposer.TargetOffset;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float offsetX = Random.Range(-1f, 1f) * intensity;
+            float offsetY = Random.Range(-1f, 1f) * intensity;
+
+            positionComposer.TargetOffset = new Vector3(offsetX, offsetY, originalOffset.z);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        positionComposer.TargetOffset = originalOffset;
     }
 }

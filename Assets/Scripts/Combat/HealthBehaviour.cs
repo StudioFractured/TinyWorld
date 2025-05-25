@@ -63,6 +63,9 @@ public class HealthBehaviour : MonoBehaviour
         }
         else
         {
+            PlayerHealth ph = FindAnyObjectByType<PlayerHealth>();
+            ph.ShakeCam();
+
             _hasTakenDamageThisFrame = true;
             OnDamageTaken?.Invoke(_currentValue);
         }
