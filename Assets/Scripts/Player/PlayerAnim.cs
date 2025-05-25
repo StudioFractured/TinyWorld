@@ -27,4 +27,14 @@ public class PlayerAnim : MonoBehaviour
     {
         _anim.SetBool("IsCrouching", _value);
     }
+
+    public void SetAttackTrigger()
+    {
+        _anim.SetTrigger("Attack");
+    }
+
+    public void SetIsAttacking(bool _value)
+    {
+        _anim.SetBool("IsAttack", _value);
+    }
 }

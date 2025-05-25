@@ -17,11 +17,13 @@ public class AttackAction : StateAction
 
     private PlayerController _controller = null;
     private CrouchHandler _crouchHandler = null;
+    private PlayerAnim _anim = null;
 
     public override void Awake(StateMachine _stateMachine)
     {
         _controller = _stateMachine.GetComponent<PlayerController>();
         _crouchHandler = _stateMachine.GetComponent<CrouchHandler>();
+        _anim = _stateMachine.GetComponent<PlayerAnim>();
     }
 
     public override void OnStateEnter()
@@ -32,6 +34,8 @@ public class AttackAction : StateAction
         }
 
         _controller.StopVelocity();
+        _anim.SetAttackTrigger();
+
     }
 
     public override void OnFixedUpdate()

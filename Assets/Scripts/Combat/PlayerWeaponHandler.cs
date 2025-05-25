@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using TarodevController;
 using UnityEngine;
 
 public class PlayerWeaponHandler : MonoBehaviour
@@ -12,6 +12,16 @@ public class PlayerWeaponHandler : MonoBehaviour
     [Space]
     [SerializeField] List<DamageOnHit> _damageAgents = null;
 
+    //private void OnEnable()
+    //{
+    //    GetComponent<PlayerController>().GroundedChanged += DisableAll;
+    //}
+
+    //private void OnDisable()
+    //{
+    //    GetComponent<PlayerController>().GroundedChanged -= DisableAll;
+    //}
+
     public void GatherStandInput()
     {
         if (!IsDefending())
@@ -19,10 +29,10 @@ public class PlayerWeaponHandler : MonoBehaviour
             _standSword.GatherInput();
         }
 
-        if (!IsAttacking())
-        {
-            _standShield.GatherInput();
-        }
+        //if (!IsAttacking())
+        //{
+        //    _standShield.GatherInput();
+        //}
     }
 
     public void GatherCrouchInput()
@@ -32,10 +42,15 @@ public class PlayerWeaponHandler : MonoBehaviour
             _crouchSword.GatherInput();
         }
 
-        if (!IsAttacking())
-        {
-            _crouchShield.GatherInput();
-        }
+        //if (!IsAttacking())
+        //{
+        //    _crouchShield.GatherInput();
+        //}
+    }
+
+    private void DisableAll(bool arg1, float arg2)
+    {
+        DisableAll();
     }
 
     public void DisableAll()

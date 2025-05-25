@@ -7,6 +7,7 @@ public class MeleeWeapon : MonoBehaviour
     [SerializeField] SpriteRenderer _renderer = null;
     [SerializeField] Collider2D _collider = null;
     [SerializeField] float _time = 0.5f;
+    [SerializeField] PlayerAnim _anim = null;
 
     [Header("// PLAYER")]
     [SerializeField] protected PlayerInputHandler _input = null;
@@ -21,6 +22,7 @@ public class MeleeWeapon : MonoBehaviour
         if (_input.AttackPerformed)
         {
             Attack();
+            //_anim.SetAttackTrigger();
         }
     }
 
@@ -49,7 +51,7 @@ public class MeleeWeapon : MonoBehaviour
 
     private void SetEnable(bool _value)
     {
-        _renderer.enabled = _value;
+        //_renderer.enabled = _value;
         _collider.enabled = _value;
     }
 
