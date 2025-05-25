@@ -4,18 +4,26 @@ using System.Collections;
 public class Turret : MonoBehaviour, IReactOnHit
 {
     [SerializeField] SideFlipper _flipper = null;
-    //public GameObject bulletPrefab;
     [SerializeField] Bullet _bulletPrefab = null;
     [SerializeField] Animator _anim = null;
     public Transform firePoint;
-    public float shootingRate = 1f; // seconds between shots
-    //public bool shootRight = true;  // Set to false to shoot left
-
+    public float shootingRate = 1f;
     private float shootingCooldown;
 
     [Header("// FREEZE")]
     [SerializeField] float _frozeDuration = 0.3f;
     [SerializeField] bool isFrozen = false;
+
+    [SerializeField] float detectionRange = 10f;
+
+    private Transform playerTransform;
+
+    private void Awake()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+            playerTransform = playerObj.transform;
+    }
 
     public void ReactToHit()
     {
@@ -32,7 +40,17 @@ public class Turret : MonoBehaviour, IReactOnHit
     private void Update()
     {
         if (isFrozen) return;
-        HandleShooting();
+        if (IsPlayerInRange())
+        {
+            HandleShooting();
+        }
+    }
+
+    private bool IsPlayerInRange()
+    {
+        if (playerTransform == null) return false;
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
+        return distance <= detectionRange;
     }
 
     private void HandleShooting()
@@ -53,8 +71,6 @@ public class Turret : MonoBehaviour, IReactOnHit
         {
             var _bulletInstance = Instantiate(_bulletPrefab, firePoint.position, Quaternion.identity);
 
-            // Shoot far to the right or left so Mathf.Sign can detect direction
-            // float offset = shootRight ? 10f : -10f;
             float offset = _flipper.IsFacingRight() ? 10f : -10f;
             Vector3 target = firePoint.position + new Vector3(offset, 0f, 0f);
             _bulletInstance.SetTarget(target);

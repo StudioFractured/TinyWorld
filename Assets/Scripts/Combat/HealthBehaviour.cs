@@ -8,7 +8,7 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField] float _initialValue = 5f;
 
     [Header("// READONLY")]
-    [SerializeField] float _currentValue = 0f;
+    [SerializeField] public float _currentValue = 0f;
     [SerializeField] GameObject _lastDamageSource = null;
     [SerializeField] bool _hasTakenDamageThisFrame = false;
 
@@ -63,6 +63,9 @@ public class HealthBehaviour : MonoBehaviour
         }
         else
         {
+            PlayerHealth ph = FindAnyObjectByType<PlayerHealth>();
+            ph.ShakeCam();
+
             _hasTakenDamageThisFrame = true;
             OnDamageTaken?.Invoke(_currentValue);
         }
