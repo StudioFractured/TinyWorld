@@ -39,7 +39,8 @@ public class PlayerDefaultAction : StateAction
 
     public override void OnUpdate()
     {
-        _weaponHandler.GatherStandInput();
+        if (_controller.Grounded)
+            _weaponHandler.GatherStandInput();
 
         _controller.IncreaseDeltaTime();
         _controller.GatherInput();

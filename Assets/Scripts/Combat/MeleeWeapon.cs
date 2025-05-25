@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour
 {
-    //[SerializeField] SpriteRenderer _renderer = null;
     [SerializeField] Collider2D _collider = null;
     [SerializeField] float _time = 0.5f;
     [SerializeField] PlayerAnim _anim = null;
@@ -49,7 +48,6 @@ public class MeleeWeapon : MonoBehaviour
 
     private void SetEnable(bool _value)
     {
-        //_renderer.enabled = _value;
         _collider.enabled = _value;
     }
 

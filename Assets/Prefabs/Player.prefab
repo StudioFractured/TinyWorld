@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2435cb9b4c4004745ba260e5d582e40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 4292071519452491803}
   _collider: {fileID: 3030206520010725036}
   _time: 0.5
   _anim: {fileID: 0}
@@ -425,9 +424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87efdeaa7553d704a83f5054998355fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 3641924313821427924}
   _collider: {fileID: 3880523448500832217}
-  _time: 0.5
+  _time: 0.3
   _anim: {fileID: 607607355303983458}
   _input: {fileID: 7772586091523927594}
 --- !u!114 &6713804980678836454
@@ -621,9 +619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87efdeaa7553d704a83f5054998355fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 7382442541478785883}
   _collider: {fileID: 5435967000923112967}
-  _time: 0.5
+  _time: 0.3
   _anim: {fileID: 607607355303983458}
   _input: {fileID: 7772586091523927594}
 --- !u!114 &5760091053500931846
@@ -1287,7 +1284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2435cb9b4c4004745ba260e5d582e40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 495791755565027942}
   _collider: {fileID: 5038187475335703368}
   _time: 0.5
   _anim: {fileID: 0}
