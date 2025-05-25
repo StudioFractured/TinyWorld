@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2442288877609399515}
   - component: {fileID: 7189047937044223098}
   m_Layer: 0
-  m_Name: Slasher
+  m_Name: _Slasher
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

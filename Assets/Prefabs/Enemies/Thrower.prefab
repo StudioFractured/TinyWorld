@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 862425678556297733}
   - component: {fileID: 9187893817742434320}
   - component: {fileID: 9194149978152998572}
+  - component: {fileID: 6659419413256352621}
+  - component: {fileID: 5941067208846998575}
   m_Layer: 0
   m_Name: Thrower
   m_TagString: Enemy
@@ -248,6 +250,8 @@ MonoBehaviour:
   _currentValue: 0
   _lastDamageSource: {fileID: 0}
   _hasTakenDamageThisFrame: 0
+  FlashColor: {r: 1, g: 1, b: 1, a: 1}
+  FlashTime: 0.1
 --- !u!114 &862425678556297733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +303,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 5519384776289092853}
   _player: {fileID: 0}
+--- !u!114 &6659419413256352621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6412176191055312121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f0ab14eb8ed8f49966046532313ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 39e752879ea8587499e6fbad10ea297b, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 6685884974091744510}
+--- !u!114 &5941067208846998575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6412176191055312121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62787c975c131384fab207a32d260d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 6685884974091744510}
 --- !u!1 &8617297543140383212
 GameObject:
   m_ObjectHideFlags: 0

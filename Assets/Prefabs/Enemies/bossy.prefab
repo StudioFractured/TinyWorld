@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 286458960779659539}
   - component: {fileID: 6100966543708379207}
   - component: {fileID: 456969487089507803}
+  - component: {fileID: 130213879159237368}
+  - component: {fileID: 8890057899677288954}
   m_Layer: 0
   m_Name: bossy
   m_TagString: Enemy
@@ -190,8 +192,40 @@ MonoBehaviour:
   burstCount: 13
   bulletsPerBurst: 50
   waitAtPointDuration: 1.5
+  offsetMin: -0.6
+  offsetMax: 0.6
   _frozeDuration: 0.3
   isFrozen: 0
+--- !u!114 &130213879159237368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542342126326235723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f0ab14eb8ed8f49966046532313ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 39e752879ea8587499e6fbad10ea297b, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 2456772793703358242}
+--- !u!114 &8890057899677288954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542342126326235723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62787c975c131384fab207a32d260d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 2456772793703358242}
 --- !u!1 &5541063087661425598
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d518180a961b5144a5c148621b967b7, type: 3}
-  m_Name: Audio_Music
+  m_Name: Audio_Death_1
   m_EditorClassIdentifier: 
-  _clip: {fileID: 0}
+  _clip: {fileID: 8300000, guid: 021f96f4f03189a4cbd56a1c7205abbd, type: 3}
   _output: {fileID: 0}
   _isMusic: 0
   _bypassEffects: 0

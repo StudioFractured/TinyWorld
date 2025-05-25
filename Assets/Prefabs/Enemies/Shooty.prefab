@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2901941730838536099}
   - component: {fileID: 3695066363862309711}
   - component: {fileID: 4046385162476291005}
+  - component: {fileID: 3680866827322756636}
+  - component: {fileID: 3052836287071303084}
   m_Layer: 0
   m_Name: Shooty
   m_TagString: Enemy
@@ -180,6 +182,36 @@ MonoBehaviour:
   _tags: {fileID: 11400000, guid: cc334079652fcf94983c61ffa4337060, type: 2}
   _damage: 1
   _destroyOnHit: 0
+--- !u!114 &3680866827322756636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390172487757211690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f0ab14eb8ed8f49966046532313ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 39e752879ea8587499e6fbad10ea297b, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 2804180881521338438}
+--- !u!114 &3052836287071303084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390172487757211690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62787c975c131384fab207a32d260d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 2804180881521338438}
 --- !u!1 &1721103007296555295
 GameObject:
   m_ObjectHideFlags: 0

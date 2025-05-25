@@ -157,6 +157,8 @@ GameObject:
   - component: {fileID: 824887557251205415}
   - component: {fileID: 5570323736974478361}
   - component: {fileID: 8242315826844551552}
+  - component: {fileID: -2762424798322416458}
+  - component: {fileID: -5974879493160958373}
   m_Layer: 0
   m_Name: Fly
   m_TagString: Enemy
@@ -257,11 +259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23b03b9aa8cebb4998c8fccbc135f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxValue: 3
-  _initialValue: 3
+  _maxValue: 2
+  _initialValue: 2
   _currentValue: 0
   _lastDamageSource: {fileID: 0}
   _hasTakenDamageThisFrame: 0
+  FlashColor: {r: 1, g: 1, b: 1, a: 1}
+  FlashTime: 0.1
 --- !u!114 &824887557251205415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +319,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7510507057698525955}
   _player: {fileID: 0}
+--- !u!114 &-2762424798322416458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637454139730986076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f0ab14eb8ed8f49966046532313ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 39e752879ea8587499e6fbad10ea297b, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 1273891370839942183}
+--- !u!114 &-5974879493160958373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637454139730986076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62787c975c131384fab207a32d260d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 1273891370839942183}
 --- !u!1 &5092925382639564063
 GameObject:
   m_ObjectHideFlags: 0

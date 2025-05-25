@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 6014409568976797024}
   - component: {fileID: 4152985236242247773}
   - component: {fileID: 2093387564314708054}
+  - component: {fileID: -4006001129965309899}
+  - component: {fileID: -1649120225355237566}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Enemy
@@ -156,11 +158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23b03b9aa8cebb4998c8fccbc135f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxValue: 2
-  _initialValue: 2
+  _maxValue: 5
+  _initialValue: 5
   _currentValue: 0
   _lastDamageSource: {fileID: 0}
   _hasTakenDamageThisFrame: 0
+  FlashColor: {r: 1, g: 1, b: 1, a: 1}
+  FlashTime: 0.1
 --- !u!114 &6014409568976797024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +226,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 5990355597561729842}
   _player: {fileID: 0}
+--- !u!114 &-4006001129965309899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3763576233534808774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f0ab14eb8ed8f49966046532313ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 39e752879ea8587499e6fbad10ea297b, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 3745612719123090543}
+--- !u!114 &-1649120225355237566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3763576233534808774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62787c975c131384fab207a32d260d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
+  _playOnStart: 0
+  _health: {fileID: 3745612719123090543}
 --- !u!1 &5743571014411196869
 GameObject:
   m_ObjectHideFlags: 0
