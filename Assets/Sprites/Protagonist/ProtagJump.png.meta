@@ -70,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -159,13 +159,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ProtagJump_0
+      name: ProtagIdle_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 47
-        width: 40
-        height: 62
+        x: 0
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 74d4297062bd48900800000000000000
-      internalID: 685913999649426759
+      spriteID: 78acda37d8241bac0800000000000000
+      internalID: -3841215831871731065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagJump_1
+      name: ProtagIdle_1
       rect:
         serializedVersion: 2
-        x: 225
-        y: 48
-        width: 31
-        height: 64
+        x: 160
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89abedf769339d270800000000000000
-      internalID: 8275702511753411224
+      spriteID: a4ac3f2a222ddd350800000000000000
+      internalID: 6043217321205680714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagJump_2
+      name: ProtagIdle_2
       rect:
         serializedVersion: 2
-        x: 385
-        y: 48
-        width: 31
-        height: 64
+        x: 320
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4eac33bd624be42a0800000000000000
-      internalID: -6751260712402433308
+      spriteID: c64c97592b19caa80800000000000000
+      internalID: -8454222204283272084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagJump_3
+      name: ProtagIdle_3
       rect:
         serializedVersion: 2
-        x: 545
-        y: 49
-        width: 31
-        height: 64
+        x: 480
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b62197f8de94916d0800000000000000
-      internalID: -3019300790512053653
+      spriteID: bc5a544c28388b5e0800000000000000
+      internalID: -1893619045647407669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagJump_4
+      name: ProtagIdle_4
       rect:
         serializedVersion: 2
-        x: 700
-        y: 51
-        width: 43
-        height: 61
+        x: 640
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ff5767afe94311e0800000000000000
-      internalID: -2228356096963682319
+      spriteID: 654e84fb0a133d020800000000000000
+      internalID: 2365288795773396054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProtagJump_5
+      name: ProtagIdle_5
       rect:
         serializedVersion: 2
-        x: 856
-        y: 54
-        width: 51
-        height: 59
+        x: 800
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,140 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0e60568c74a387f0800000000000000
-      internalID: -611464269655937521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ProtagJump_6
-      rect:
-        serializedVersion: 2
-        x: 1017
-        y: 55
-        width: 49
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 501d54e1521d68310800000000000000
-      internalID: 1407041890951745797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ProtagJump_7
-      rect:
-        serializedVersion: 2
-        x: 1176
-        y: 54
-        width: 51
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a59ab492ecc0d96b0800000000000000
-      internalID: -5288056307867473574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ProtagJump_8
-      rect:
-        serializedVersion: 2
-        x: 1335
-        y: 47
-        width: 51
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ea5915f8d7f6d1e10800000000000000
-      internalID: 2170013180528530862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ProtagJump_9
-      rect:
-        serializedVersion: 2
-        x: 1497
-        y: 47
-        width: 51
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: be68604aa52211280800000000000000
-      internalID: -9074434001480546581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ProtagJump_10
-      rect:
-        serializedVersion: 2
-        x: 1658
-        y: 47
-        width: 47
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 74de06bb9c7424630800000000000000
-      internalID: 3909766358268702023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ProtagJump_11
-      rect:
-        serializedVersion: 2
-        x: 1821
-        y: 47
-        width: 40
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3323b8042d18dbf0800000000000000
-      internalID: -299457334618152130
+      spriteID: 9be792079d457dad0800000000000000
+      internalID: -2677578160582066503
       vertices: []
       indices: 
       edges: []
@@ -426,7 +294,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6832e07f0d2383a419bdce67e7e2c3b5
     internalID: 0
     vertices: []
     indices: 
@@ -435,7 +303,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ProtagIdle_0: -3841215831871731065
+      ProtagIdle_1: 6043217321205680714
+      ProtagIdle_2: -8454222204283272084
+      ProtagIdle_3: -1893619045647407669
+      ProtagIdle_4: 2365288795773396054
+      ProtagIdle_5: -2677578160582066503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -208,6 +208,11 @@ namespace TarodevController
             _stats = _defaultStats;
         }
 
+        public Vector2 GetLinearVelocity()
+        {
+            return _rb.linearVelocity;
+        }
+
 #if UNITY_EDITOR
         private void OnValidate()
         {

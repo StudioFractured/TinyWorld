@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 1303340540709385551}
   - component: {fileID: 6815902453125264030}
   - component: {fileID: 4656437199929839321}
+  - component: {fileID: 607607355303983458}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -966,6 +967,7 @@ MonoBehaviour:
   _target: {fileID: 7663617450701666454}
   _defaultCollider: {fileID: 4976216670244558586}
   _crouchCollider: {fileID: 9086568007366929116}
+  _anim: {fileID: 607607355303983458}
 --- !u!114 &6815902453125264030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,6 +987,11 @@ MonoBehaviour:
   _hasTakenDamageThisFrame: 0
   FlashColor: {r: 1, g: 1, b: 1, a: 1}
   FlashTime: 0.1
+  gridParent: {fileID: 0}
+  hpPrefab: {fileID: 0}
+  virtualCam: {fileID: 0}
+  duration: 0
+  intensity: 0
 --- !u!114 &4656437199929839321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +1006,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 395022085557045353}
   _input: {fileID: 7772586091523927594}
+--- !u!114 &607607355303983458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943158972980337507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78b02cb754910c42a2c91d5159d89fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 2267561453439946802}
+  _anim: {fileID: 2277374847265108604}
 --- !u!1 &7792777339260106606
 GameObject:
   m_ObjectHideFlags: 0

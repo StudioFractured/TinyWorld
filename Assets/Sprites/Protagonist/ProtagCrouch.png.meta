@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 808ae2cd7cadebe449cac3016560d9d2
+guid: 64616a2706e1beb45b1dce8575246d2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1504354576974085241
-    second: ProtagWalk_0
+      213: 7572913261408243966
+    second: ProtagCrouch_0
   - first:
-      213: -5823907481087492459
-    second: ProtagWalk_1
+      213: 4253223998399186787
+    second: ProtagCrouch_1
   - first:
-      213: -5521669271656892686
-    second: ProtagWalk_2
+      213: 7144289681770461700
+    second: ProtagCrouch_2
   - first:
-      213: -3645614735218235162
-    second: ProtagWalk_3
+      213: -6646622038552961438
+    second: ProtagCrouch_3
   - first:
-      213: 2593867637194554106
-    second: ProtagWalk_4
-  - first:
-      213: -4154270638732929749
-    second: ProtagWalk_5
+      213: -4958553282126581514
+    second: ProtagCrouch_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
