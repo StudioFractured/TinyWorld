@@ -12,15 +12,15 @@ public class PlayerWeaponHandler : MonoBehaviour
     [Space]
     [SerializeField] List<DamageOnHit> _damageAgents = null;
 
-    //private void OnEnable()
-    //{
-    //    GetComponent<PlayerController>().GroundedChanged += DisableAll;
-    //}
+    private void OnEnable()
+    {
+        GetComponent<PlayerController>().GroundedChanged += DisableAll;
+    }
 
-    //private void OnDisable()
-    //{
-    //    GetComponent<PlayerController>().GroundedChanged -= DisableAll;
-    //}
+    private void OnDisable()
+    {
+        GetComponent<PlayerController>().GroundedChanged -= DisableAll;
+    }
 
     public void GatherStandInput()
     {

@@ -32,9 +32,4 @@ public class PlayerAnim : MonoBehaviour
     {
         _anim.SetTrigger("Attack");
     }
-
-    public void SetIsAttacking(bool _value)
-    {
-        _anim.SetBool("IsAttack", _value);
-    }
 }

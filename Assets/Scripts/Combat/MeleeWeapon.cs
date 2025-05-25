@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer _renderer = null;
+    //[SerializeField] SpriteRenderer _renderer = null;
     [SerializeField] Collider2D _collider = null;
     [SerializeField] float _time = 0.5f;
     [SerializeField] PlayerAnim _anim = null;
@@ -22,7 +21,6 @@ public class MeleeWeapon : MonoBehaviour
         if (_input.AttackPerformed)
         {
             Attack();
-            //_anim.SetAttackTrigger();
         }
     }
 
