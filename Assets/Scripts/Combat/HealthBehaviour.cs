@@ -8,7 +8,7 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField] float _initialValue = 5f;
 
     [Header("// READONLY")]
-    [SerializeField] float _currentValue = 0f;
+    [SerializeField] public float _currentValue = 0f;
     [SerializeField] GameObject _lastDamageSource = null;
     [SerializeField] bool _hasTakenDamageThisFrame = false;
 
