@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379d369479edf6c408a1f68487a1ab3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   offset: 3
   _frozeDuration: 0.3
   isFrozen: 0

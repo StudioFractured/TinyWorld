@@ -4,6 +4,7 @@ public class ArcBullet : MonoBehaviour
 {
     public float travelTime = 1f;
     public float arcHeight = 2f;
+    [SerializeField] float _rotateSpeed = 15f;
 
     private Vector3 startPoint;
     private Vector3 endPoint;
@@ -32,7 +33,9 @@ public class ArcBullet : MonoBehaviour
 
         if (t >= 1f)
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
+
+        transform.Rotate(0, 0, _rotateSpeed * Time.deltaTime);
     }
 }

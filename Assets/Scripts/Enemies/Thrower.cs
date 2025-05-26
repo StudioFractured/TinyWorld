@@ -14,6 +14,7 @@ public class Thrower : MonoBehaviour, IReactOnHit
     public GameObject arcBulletPrefab;
     public Transform firePoint;
     public string playerTag = "Player";
+    [SerializeField] Animator _anim = null;
 
     private Vector2 startPos;
     private bool movingRight = true;
@@ -76,6 +77,7 @@ public class Thrower : MonoBehaviour, IReactOnHit
     {
         canAttack = false;
 
+        _anim.SetTrigger("Attack");
         yield return new WaitForSeconds(stopDuration);
 
         if (arcBulletPrefab && player)

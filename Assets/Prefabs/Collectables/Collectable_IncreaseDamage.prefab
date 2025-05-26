@@ -8,17 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4667710204521569039, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
-      propertyPath: m_Color.b
-      value: 1
+    - target: {fileID: 3994932662974307258, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4667710204521569039, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667710204521569039, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
-      propertyPath: m_Color.r
-      value: 0.19999999
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -278199919, guid: b960171b16ab37148baa3fc1437ca03e, type: 3}
+    - target: {fileID: 5087030352215852378, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
+      propertyPath: m_Radius
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5618154379204239093, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable_IncreaseDamage
       objectReference: {fileID: 0}
+    - target: {fileID: 6793129757148588509, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -71,7 +75,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5839430159408688284, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5827685237385609123}
+    - targetCorrespondingSourceObject: {fileID: 2901561545524124366, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1745461132485130362}
   m_SourcePrefab: {fileID: 100100000, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
+--- !u!1 &2254647614279079582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2901561545524124366, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
+  m_PrefabInstance: {fileID: 3967236779939941456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1745461132485130362
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254647614279079582}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5073231fc7ec654580178ab4b4213aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7352027571303653580 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5839430159408688284, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
