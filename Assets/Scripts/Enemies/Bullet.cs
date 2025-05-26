@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
     [SerializeField] bool _useSign = true;
+    [SerializeField] bool _rotateToDirection = false;
 
     private Vector3 direction;
 
@@ -28,5 +29,8 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         transform.position += speed * Time.deltaTime * direction;
+
+        if (_rotateToDirection)
+            transform.right = (Vector2)direction;
     }
 }
