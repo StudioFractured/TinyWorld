@@ -51,6 +51,7 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
 
     private void Update()
     {
+        if (Vector2.Distance(transform.position, player.position) > 10) return;
         if (isFrozen || isFiring) return;
         if (player == null || patrolPoints.Length == 0) return;
 

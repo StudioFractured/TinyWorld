@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   offset: 3
-  detectionRange: 6
+  detectionRange: 8
   stopDuration: 0.5
   attackCooldown: 2
   arcBulletPrefab: {fileID: 732470318732670508, guid: cddf894c0b8001440ba2fca65dabb4f1, type: 3}
