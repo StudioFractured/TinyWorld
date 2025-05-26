@@ -11,6 +11,7 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField] public float _currentValue = 0f;
     [SerializeField] GameObject _lastDamageSource = null;
     [SerializeField] bool _hasTakenDamageThisFrame = false;
+    public bool isPlayer = false;
 
     public event UnityAction<float> OnHealed = null;
     public event UnityAction<float> OnDamageTaken = null;
@@ -23,8 +24,8 @@ public class HealthBehaviour : MonoBehaviour
     public Color FlashColor = Color.white;
     public float FlashTime = 0.1f;
 
-    private SpriteRenderer _spriteRenderer;
-    private Material _material;
+    public SpriteRenderer _spriteRenderer;
+    public Material _material;
 
     private void Awake()
     {
@@ -63,13 +64,17 @@ public class HealthBehaviour : MonoBehaviour
         }
         else
         {
-            PlayerHealth ph = FindAnyObjectByType<PlayerHealth>();
-            ph.ShakeCam();
+            if (isPlayer)
+            {
+                PlayerHealth ph = FindAnyObjectByType<PlayerHealth>();
+                ph.ShakeCam();
+            }
 
             _hasTakenDamageThisFrame = true;
             OnDamageTaken?.Invoke(_currentValue);
         }
     }
+
 
     public void ResetValue()
     {
