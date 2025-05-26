@@ -33,6 +33,7 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
     [SerializeField] bool isFrozen = false;
 
     private float swayOffset;
+    public AudioSO _shootSfx;
 
     private void Start()
     {
@@ -104,6 +105,7 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
         {
             for (int j = 0; j < bulletsPerBurst; j++)
             {
+                _shootSfx.Play(transform.position);
                 float randomYOffset = Random.Range(offsetMin, offsetMax);
                 Vector3 targetPos = player.position + new Vector3(0, randomYOffset, 0);
                 var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);

@@ -17,6 +17,7 @@ public class Turret : MonoBehaviour, IReactOnHit
     [SerializeField] float detectionRange = 10f;
 
     private Transform playerTransform;
+    public AudioSO _shootSfx;
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ public class Turret : MonoBehaviour, IReactOnHit
     {
         if (shootingCooldown <= 0f)
         {
+            _shootSfx.Play(transform.position);
             _anim.SetTrigger("Shoot");
             SpawnBullet();
             shootingCooldown = shootingRate;

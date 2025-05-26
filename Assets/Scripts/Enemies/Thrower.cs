@@ -24,6 +24,7 @@ public class Thrower : MonoBehaviour, IReactOnHit
     [Header("// FREEZE")]
     [SerializeField] float _frozeDuration = 0.3f;
     [SerializeField] bool isFrozen = false;
+    public AudioSO _shootSfx;
 
     public void ReactToHit()
     {
@@ -82,6 +83,7 @@ public class Thrower : MonoBehaviour, IReactOnHit
 
         if (arcBulletPrefab && player)
         {
+            _shootSfx.Play(transform.position);
             GameObject bullet = Instantiate(arcBulletPrefab, firePoint.position, Quaternion.identity);
             bullet.GetComponent<ArcBullet>().Launch(player.position);
         }
