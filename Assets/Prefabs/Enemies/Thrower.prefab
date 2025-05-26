@@ -307,7 +307,7 @@ MonoBehaviour:
   _lastDamageSource: {fileID: 0}
   _hasTakenDamageThisFrame: 0
   isPlayer: 0
-  FlashColor: {r: 1, g: 1, b: 1, a: 1}
+  FlashColor: {r: 1, g: 0, b: 0, a: 1}
   FlashTime: 0.1
   _spriteRenderer: {fileID: 0}
   _material: {fileID: 0}
@@ -334,6 +334,7 @@ MonoBehaviour:
   _anim: {fileID: 7790543370176449317}
   _frozeDuration: 0.3
   isFrozen: 0
+  _shootSfx: {fileID: 11400000, guid: 8ea8a7ffa8b62c64797eca798635df0d, type: 2}
 --- !u!114 &9187893817742434320
 MonoBehaviour:
   m_ObjectHideFlags: 0
