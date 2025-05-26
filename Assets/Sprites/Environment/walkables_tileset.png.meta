@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 3d5eb902eaab5724a8e518818bd423bc
+guid: b2927eaa837db1d4fbb13e759fdd771f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3367932149377307684
-    second: bug_0
-  - first:
-      213: -9179059651195818830
-    second: bug_1
-  - first:
-      213: -4942867462747513436
-    second: bug_2
-  - first:
-      213: -7894582863579198817
-    second: bug_3
+      213: 3851472907077774899
+    second: walkables_tileset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,12 +126,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bug_0
+      name: walkables_tileset_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -148,21 +139,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cdb6fb0ed83b241d0800000000000000
-      internalID: -3367932149377307684
+      spriteID: cae0400aa570ff740816ae65585569c8
+      internalID: 788994259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bug_1
+      name: walkables_tileset_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -170,21 +161,43 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2bc2a5641ed6d9080800000000000000
-      internalID: -9179059651195818830
+      spriteID: 6a1f10bfa0dd8304485983f70d32aba1
+      internalID: 871598464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bug_2
+      name: walkables_tileset_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96307f194cc241e468edcfc92742d7ae
+      internalID: 715444461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkables_tileset_3
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -192,21 +205,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4ad19172b38676bb0800000000000000
-      internalID: -4942867462747513436
+      spriteID: 16c22afa67febf649a3b7d740ab073df
+      internalID: -1067386786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bug_3
+      name: walkables_tileset_4
       rect:
         serializedVersion: 2
-        x: 192
+        x: 160
         y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -214,10 +227,98 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f9ac97e76bec07290800000000000000
-      internalID: -7894582863579198817
+      spriteID: a682213935d703e49bb2a2fabfe0c3a9
+      internalID: 804937359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkables_tileset_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663b2621085580840b266af903329d73
+      internalID: -1575730658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkables_tileset_6
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f7ca594d3b20d40ab314586810afdc
+      internalID: -911964414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkables_tileset_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ce7b989f571c6499c5f981568ca065
+      internalID: 999614884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walkables_tileset_8
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef74e9ee9ff73ee42833b930e1c13c37
+      internalID: -1993690941
       vertices: []
       indices: 
       edges: []
@@ -226,7 +327,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 43fac1cd9e7259043bc04dec59c1d142
+    spriteID: 6832e07f0d2383a419bdce67e7e2c3b5
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +337,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bug_0: -3367932149377307684
-      bug_1: -9179059651195818830
-      bug_2: -4942867462747513436
-      bug_3: -7894582863579198817
+      walkables_tileset_0: 788994259
+      walkables_tileset_1: 871598464
+      walkables_tileset_2: 715444461
+      walkables_tileset_3: -1067386786
+      walkables_tileset_4: 804937359
+      walkables_tileset_5: -1575730658
+      walkables_tileset_6: -911964414
+      walkables_tileset_7: 999614884
+      walkables_tileset_8: -1993690941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

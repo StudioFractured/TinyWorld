@@ -979,15 +979,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d0fd0e82812a845b69704456e055b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxValue: 10
-  _initialValue: 10
+  _maxValue: 3
+  _initialValue: 3
   _currentValue: 0
   _lastDamageSource: {fileID: 0}
   _hasTakenDamageThisFrame: 0
   FlashColor: {r: 1, g: 1, b: 1, a: 1}
   FlashTime: 0.1
   gridParent: {fileID: 0}
-  hpPrefab: {fileID: 0}
+  hpPrefab: {fileID: 787577261213136696, guid: 8f6b0955c35dc594fa09bb585d5bc94d, type: 3}
   virtualCam: {fileID: 0}
   duration: 0
   intensity: 0
