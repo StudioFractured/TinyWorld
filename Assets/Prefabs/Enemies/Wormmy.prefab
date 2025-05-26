@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2664965786169351874}
   - component: {fileID: 8299686104144097178}
   - component: {fileID: 9146946431792960083}
+  - component: {fileID: 4481544381660786240}
   m_Layer: 0
   m_Name: Wormmy
   m_TagString: Enemy
@@ -193,6 +194,22 @@ MonoBehaviour:
   _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
   _playOnStart: 0
   _health: {fileID: -1985097241506111035}
+--- !u!114 &4481544381660786240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785883009915645957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61c9a8081547454cac951c747596d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: -1985097241506111035}
+  _prefab: {fileID: 8462803331059083727, guid: d108a8a4a1c25864b91eca20de3352e7, type: 3}
+  _spawnPoint: {fileID: 1339828672152542122}
+  _offset: {x: 0, y: 0.3}
 --- !u!1 &2636400269293532400
 GameObject:
   m_ObjectHideFlags: 0

@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23b03b9aa8cebb4998c8fccbc135f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxValue: 5
-  _initialValue: 5
+  _maxValue: 4
+  _initialValue: 4
   _currentValue: 0
   _lastDamageSource: {fileID: 0}
   _hasTakenDamageThisFrame: 0

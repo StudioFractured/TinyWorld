@@ -32,6 +32,11 @@ public class AudioHandler : MonoBehaviour
         return _source;
     }
 
+    public void StopMusic()
+    {
+        _sources[0].Stop();
+    }
+
     public AudioSource GetAvailableSource()
     {
         int _count = _sources.Count;

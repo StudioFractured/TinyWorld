@@ -146,8 +146,8 @@ public class Knight : MonoBehaviour, IReactOnHit
     {
         if (bulletPrefab != null)
         {
-            Vector3 spawnPosition = new Vector3(slashPoint.position.x, -2f, 0);
-            var _bulletInstance = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
+            //Vector3 spawnPosition = new (slashPoint.position.x, -2f, 0);
+            var _bulletInstance = Instantiate(bulletPrefab, slashPoint.position, Quaternion.identity);
             _bulletInstance.SetTarget(new Vector2(dashDirection.x, 0f));
         }
 

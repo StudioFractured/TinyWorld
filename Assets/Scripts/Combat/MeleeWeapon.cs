@@ -5,7 +5,6 @@ public class MeleeWeapon : MonoBehaviour
 {
     [SerializeField] Collider2D _collider = null;
     [SerializeField] float _time = 0.5f;
-    [SerializeField] PlayerAnim _anim = null;
 
     [Header("// PLAYER")]
     [SerializeField] protected PlayerInputHandler _input = null;
