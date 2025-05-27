@@ -29,6 +29,7 @@ public class SceneHandler : MonoBehaviour
 
     private IEnumerator LoadYourAsyncScene(string _sceneToLoad, string _sceneToUnload)
     {
+        Time.timeScale = 1;
         OnStartLoading?.Invoke();
         yield return _waitTime;
 
