@@ -236,10 +236,3 @@ namespace TarodevController
         public Vector2 FrameInput { get; }
     }
 }
-
-//public enum PlayerState
-//{
-//    Default,
-//    Attacking,
-//    Crouched,
-//}

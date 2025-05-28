@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de92c6c6f5f93a347934c5bc9f37ddcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadTimeOffset: 1
+  _loadTimeOffset: 0.5
 --- !u!4 &161041610
 Transform:
   m_ObjectHideFlags: 0
@@ -867,7 +867,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 2062929042}
   _fadeDuration: 0.3
-  _isModal: 0
 --- !u!1001 &7450466354543555548
 PrefabInstance:
   m_ObjectHideFlags: 0

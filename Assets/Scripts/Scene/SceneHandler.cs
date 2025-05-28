@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    [SerializeField] float _loadTimeOffset = 1f;
+    [SerializeField] float _loadTimeOffset = 0.5f;
 
     private WaitForSeconds _waitTime = null;
 
