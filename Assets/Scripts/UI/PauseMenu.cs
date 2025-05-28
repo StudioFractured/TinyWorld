@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : CanvasView
 {
-    public GameObject UI;
-    private bool isPaused = false;
+    [Header("// READONLY")]
+    [SerializeField] bool _isPaused = false;
+
     private bool isMuted = false;
     public GameObject AudioOn;
     public GameObject AudioOff;
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             TogglePause();
@@ -18,17 +21,17 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePause()
     {
-        isPaused = !isPaused;
+        _isPaused = !_isPaused;
 
-        if (isPaused)
+        if (_isPaused)
         {
-            Time.timeScale = 0f;
-            UI.SetActive(true);
+            Time.timeScale = 0;
+            Show();
         }
         else
         {
-            Time.timeScale = 1.0f;
-            UI.SetActive(false);
+            Time.timeScale = 1;
+            Hide();
         }
     }
 

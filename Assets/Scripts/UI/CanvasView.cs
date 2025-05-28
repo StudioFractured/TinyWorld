@@ -6,14 +6,14 @@ public class CanvasView : MonoBehaviour
 {
     [SerializeField] CanvasGroup _canvasGroup = null;
     [SerializeField] float _fadeDuration = 0.3f;
-    [SerializeField] bool _isModal = false;
+    //[SerializeField] bool _isModal = false;
 
     private float _lastAlpha = 0;
     private float _targetAlpha = 0;
     private float _timer = 0;
 
-    public static event UnityAction<CanvasView> OnModalShow = null;
-    public static event UnityAction<CanvasView> OnModalHide = null;
+    //public static event UnityAction<CanvasView> OnModalShow = null;
+    //public static event UnityAction<CanvasView> OnModalHide = null;
     //public static event UnityAction<CanvasView> OnShow = null;
     //public static event UnityAction<CanvasView> OnHide = null;
 
@@ -37,8 +37,8 @@ public class CanvasView : MonoBehaviour
         _lastAlpha = _canvasGroup.alpha;
         _canvasGroup.blocksRaycasts = true;
 
-        if (_isModal)
-            OnModalShow?.Invoke(this);
+        //if (_isModal)
+        //    OnModalShow?.Invoke(this);
     }
 
     public virtual void Hide()
@@ -48,8 +48,8 @@ public class CanvasView : MonoBehaviour
         _lastAlpha = _canvasGroup.alpha;
         _canvasGroup.blocksRaycasts = false;
 
-        if (_isModal)
-            OnModalHide?.Invoke(this);
+        //if (_isModal)
+        //    OnModalHide?.Invoke(this);
     }
 
     public void InstantShow()
@@ -60,8 +60,8 @@ public class CanvasView : MonoBehaviour
         _canvasGroup.alpha = 1;
         _canvasGroup.blocksRaycasts = true;
 
-        if (_isModal)
-            OnModalShow?.Invoke(this);
+        //if (_isModal)
+        //    OnModalShow?.Invoke(this);
     }
 
     public void InstantHide()
@@ -72,8 +72,8 @@ public class CanvasView : MonoBehaviour
         _canvasGroup.alpha = 0;
         _canvasGroup.blocksRaycasts = false;
 
-        if (_isModal)
-            OnModalHide?.Invoke(this);
+        //if (_isModal)
+        //    OnModalHide?.Invoke(this);
     }
 
     public bool IsVisible()
