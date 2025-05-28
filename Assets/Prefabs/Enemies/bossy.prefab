@@ -66,12 +66,13 @@ GameObject:
   - component: {fileID: 8955663038238590531}
   - component: {fileID: 8689091257248098997}
   - component: {fileID: 1449451272992521689}
+  - component: {fileID: 456969487089507803}
   - component: {fileID: 2456772793703358242}
   - component: {fileID: 286458960779659539}
   - component: {fileID: 6100966543708379207}
-  - component: {fileID: 456969487089507803}
   - component: {fileID: 130213879159237368}
   - component: {fileID: 8890057899677288954}
+  - component: {fileID: -9133012132423669670}
   m_Layer: 0
   m_Name: bossy
   m_TagString: Enemy
@@ -160,6 +161,40 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.3, y: -0.5}
   m_Radius: 0.6
+--- !u!114 &456969487089507803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542342126326235723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b72a50c36d3454580c07c9db9fd164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
+  bulletPrefab: {fileID: 262456841301985408, guid: c158a2ee9f3ad284ca5a8c5801e4d68b, type: 3}
+  firePoint: {fileID: 6017753003296164880}
+  moveSpeed: 3
+  tiltAmount: 15
+  swayHeight: 0.3
+  swaySpeed: 2
+  fireCooldown: 2
+  burstInterval: 0.01
+  burstCount: 1
+  bulletsPerBurst: 1
+  waitAtPointDuration: 1.5
+  offsetMin: -0.6
+  offsetMax: 0.6
+  _frozeDuration: 0.3
+  isFrozen: 0
+  _shootSfx: {fileID: 11400000, guid: 8ea8a7ffa8b62c64797eca798635df0d, type: 2}
 --- !u!114 &2456772793703358242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,40 +246,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 8955663038238590531}
   _player: {fileID: 0}
---- !u!114 &456969487089507803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4542342126326235723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b72a50c36d3454580c07c9db9fd164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  player: {fileID: 0}
-  bulletPrefab: {fileID: 262456841301985408, guid: c158a2ee9f3ad284ca5a8c5801e4d68b, type: 3}
-  firePoint: {fileID: 6017753003296164880}
-  moveSpeed: 3
-  tiltAmount: 15
-  swayHeight: 0.3
-  swaySpeed: 2
-  fireCooldown: 2
-  burstInterval: 0.01
-  burstCount: 1
-  bulletsPerBurst: 1
-  waitAtPointDuration: 1.5
-  offsetMin: -0.6
-  offsetMax: 0.6
-  _frozeDuration: 0.3
-  isFrozen: 0
-  _shootSfx: {fileID: 11400000, guid: 8ea8a7ffa8b62c64797eca798635df0d, type: 2}
 --- !u!114 &130213879159237368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +276,22 @@ MonoBehaviour:
   _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
   _playOnStart: 0
   _health: {fileID: 2456772793703358242}
+--- !u!114 &-9133012132423669670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542342126326235723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61c9a8081547454cac951c747596d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 2456772793703358242}
+  _prefab: {fileID: 8462803331059083727, guid: d108a8a4a1c25864b91eca20de3352e7, type: 3}
+  _spawnPoint: {fileID: 8955663038238590531}
+  _offset: {x: 0, y: 0}
 --- !u!1 &5541063087661425598
 GameObject:
   m_ObjectHideFlags: 0

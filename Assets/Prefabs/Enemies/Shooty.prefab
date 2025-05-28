@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3117321125025697859}
   - component: {fileID: 5179408148861521899}
   - component: {fileID: 3981682352260182499}
-  - component: {fileID: 2804180881521338438}
   - component: {fileID: 2901941730838536099}
-  - component: {fileID: 3695066363862309711}
+  - component: {fileID: 2804180881521338438}
   - component: {fileID: 4046385162476291005}
+  - component: {fileID: 3695066363862309711}
   - component: {fileID: 3680866827322756636}
   - component: {fileID: 3052836287071303084}
   - component: {fileID: 5757059210970024617}
@@ -116,6 +116,27 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &2901941730838536099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390172487757211690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98690a5fbdda39e45a9aa0c2100b3a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flipper: {fileID: 3695066363862309711}
+  _bulletPrefab: {fileID: 4665682433067120134, guid: a7e09012b8f9cdf48b4ef775106db139, type: 3}
+  _anim: {fileID: 8190297325987275546}
+  firePoint: {fileID: 8913420996616349827}
+  shootingRate: 3
+  _frozeDuration: 0.3
+  isFrozen: 0
+  detectionRange: 10
+  _shootSfx: {fileID: 11400000, guid: 8ea8a7ffa8b62c64797eca798635df0d, type: 2}
 --- !u!114 &2804180881521338438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,41 +159,6 @@ MonoBehaviour:
   FlashTime: 0.1
   _spriteRenderer: {fileID: 0}
   _material: {fileID: 0}
---- !u!114 &2901941730838536099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390172487757211690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98690a5fbdda39e45a9aa0c2100b3a09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _flipper: {fileID: 3695066363862309711}
-  _bulletPrefab: {fileID: 4665682433067120134, guid: a7e09012b8f9cdf48b4ef775106db139, type: 3}
-  _anim: {fileID: 8190297325987275546}
-  firePoint: {fileID: 8913420996616349827}
-  shootingRate: 3
-  _frozeDuration: 0.3
-  isFrozen: 0
-  detectionRange: 10
-  _shootSfx: {fileID: 11400000, guid: 8ea8a7ffa8b62c64797eca798635df0d, type: 2}
---- !u!114 &3695066363862309711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390172487757211690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6176b139e8dac2c45b93938b882eccae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 3117321125025697859}
-  _player: {fileID: 0}
 --- !u!114 &4046385162476291005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +174,20 @@ MonoBehaviour:
   _tags: {fileID: 11400000, guid: cc334079652fcf94983c61ffa4337060, type: 2}
   _damage: 1
   _destroyOnHit: 0
+--- !u!114 &3695066363862309711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390172487757211690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6176b139e8dac2c45b93938b882eccae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 3117321125025697859}
+  _player: {fileID: 0}
 --- !u!114 &3680866827322756636
 MonoBehaviour:
   m_ObjectHideFlags: 0
