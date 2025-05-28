@@ -17,6 +17,21 @@ public class PlayerInputHandler : MonoBehaviour
     public bool AttackPerformed { get => _attackAction.action.WasPerformedThisFrame(); }
     public bool DefendPressed { get => _defendAction.action.IsPressed(); }
 
+    private void OnEnable()
+    {
+        PauseView.OnPauseChanged += PauseMenu_OnPauseChanged;
+    }
+
+    private void PauseMenu_OnPauseChanged(bool _isPaused)
+    {
+        var _map = _moveAction.asset.FindActionMap("Player");
+
+        if (_isPaused)
+            _map.Disable();
+        else
+            _map.Enable();
+    }
+
     private void Update()
     {
         _move = _moveAction.action.ReadValue<Vector2>();
