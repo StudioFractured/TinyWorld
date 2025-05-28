@@ -5,10 +5,6 @@ public class PauseMenu : CanvasView
     [Header("// READONLY")]
     [SerializeField] bool _isPaused = false;
 
-    private bool isMuted = false;
-    public GameObject AudioOn;
-    public GameObject AudioOff;
-
     protected override void Update()
     {
         base.Update();
@@ -32,24 +28,6 @@ public class PauseMenu : CanvasView
         {
             Time.timeScale = 1;
             Hide();
-        }
-    }
-
-    public void ToggleAudio()
-    {
-        isMuted = !isMuted;
-
-        if (isMuted)
-        {
-            AudioListener.volume = 0f;
-            AudioOff.SetActive(true);
-            AudioOn.SetActive(false);
-        }
-        else
-        {
-            AudioListener.volume = 1.0f;
-            AudioOff.SetActive(false);
-            AudioOn.SetActive(true);
         }
     }
 }
