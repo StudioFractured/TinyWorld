@@ -27,6 +27,7 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
     public float offsetMax = 0.6f;
     private bool hasFiredAtPoint = false;
     private bool isFiring = false;
+    [SerializeField] Vector3 _targetOffset = Vector3.up;
 
     [Header("// FREEZE")]
     [SerializeField] float _frozeDuration = 0.3f;
@@ -52,7 +53,7 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
 
     private void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) > 10) return;
+        if (Vector2.Distance(transform.position, player.position) > 15) return;
         if (isFrozen || isFiring) return;
         if (player == null || patrolPoints.Length == 0) return;
 
@@ -107,7 +108,7 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
             {
                 _shootSfx.Play(transform.position);
                 float randomYOffset = Random.Range(offsetMin, offsetMax);
-                Vector3 targetPos = player.position + new Vector3(0, randomYOffset, 0);
+                Vector3 targetPos = GetTargetPosition() + new Vector3(0, randomYOffset, 0);
                 var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                 bullet.SetTarget(targetPos);
             }
@@ -133,6 +134,11 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
         yield return new WaitForSeconds(duration);
         isFrozen = false;
     }
+
+    private Vector3 GetTargetPosition()
+    {
+        return player.position + _targetOffset;
+    }   
 
     private void OnDrawGizmosSelected()
     {

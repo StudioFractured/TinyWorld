@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 515321635220379702}
   m_Father: {fileID: 8955663038238590531}
@@ -160,7 +160,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.3, y: -0.5}
-  m_Radius: 0.6
+  m_Radius: 0.9
 --- !u!114 &456969487089507803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +192,7 @@ MonoBehaviour:
   waitAtPointDuration: 1.5
   offsetMin: -0.6
   offsetMax: 0.6
+  _targetOffset: {x: 0, y: 1, z: 0}
   _frozeDuration: 0.3
   isFrozen: 0
   _shootSfx: {fileID: 11400000, guid: 8ea8a7ffa8b62c64797eca798635df0d, type: 2}

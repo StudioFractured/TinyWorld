@@ -11,6 +11,7 @@ public class FlyingEnemy : MonoBehaviour, IReactOnHit
     public float speed = 5f;
     public float chaseRange = 10f;
     public float overshootDistance = 2f;
+    [SerializeField] Vector3 _targetOffset = Vector3.up;
 
     [Header("Hovering")]
     public float hoverSpeed = 2f;
@@ -52,7 +53,7 @@ public class FlyingEnemy : MonoBehaviour, IReactOnHit
         if (isFrozen) return;
         if (player == null) return;
 
-        float distanceToPlayer = Vector3.Distance(player.position, basePoint.position);
+        float distanceToPlayer = Vector3.Distance(GetTargetPosition(), basePoint.position);
 
         if (onCooldown)
         {
@@ -73,8 +74,9 @@ public class FlyingEnemy : MonoBehaviour, IReactOnHit
 
     private void MoveTowardPlayer()
     {
-        Vector3 direction = (player.position - transform.position).normalized;
-        Vector3 targetPosition = player.position + direction * overshootDistance;
+        var _targetPosition = GetTargetPosition();
+        Vector3 direction = (_targetPosition - transform.position).normalized;
+        Vector3 targetPosition = _targetPosition + direction * overshootDistance;
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
@@ -136,5 +138,10 @@ public class FlyingEnemy : MonoBehaviour, IReactOnHit
         isFrozen = true;
         yield return new WaitForSeconds(duration);
         isFrozen = false;
+    }
+
+    private Vector3 GetTargetPosition()
+    {
+        return player.position + _targetOffset;
     }
 }
