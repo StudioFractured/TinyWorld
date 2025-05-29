@@ -22,7 +22,16 @@ public class AudioPlayer : MonoBehaviour
 
         if (_stopOnDisable)
         {
-            _audioSource.Stop();
+            if (_so.IsMusic)
+            {
+                var _audioHandler = FindFirstObjectByType<AudioHandler>();
+                if (_audioHandler != null)
+                    _audioHandler.StopMusic();
+            }
+            else
+            {
+                _audioSource.Stop();
+            }
         }
     }
 
