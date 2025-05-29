@@ -112,37 +112,7 @@ public class HealthBehaviour : MonoBehaviour
         SetFlashAmount(5f);
         yield return new WaitForSeconds(FlashTime);
         SetFlashAmount(0.5f);
-
-        yield break;
-
-        float flashInDuration = 0.1f;
-        float holdDuration = 0.25f;
-        float flashOutDuration = 0.1f;
-
-        float elapsedTime = 0f;
-        while (elapsedTime < flashInDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float currentFlashAmount = Mathf.Lerp(0.5f, 10.0f, elapsedTime / flashInDuration);
-            SetFlashAmount(currentFlashAmount);
-            yield return null;
-        }
-
-        SetFlashAmount(10.0f);
-        yield return new WaitForSeconds(holdDuration);
-
-        elapsedTime = 0f;
-        while (elapsedTime < flashOutDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float currentFlashAmount = Mathf.Lerp(10.0f, 0.5f, elapsedTime / flashOutDuration);
-            SetFlashAmount(currentFlashAmount);
-            yield return null;
-        }
-
-        SetFlashAmount(0.5f);
     }
-
 
     private void SetFlashColor()
     {

@@ -181,8 +181,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9046933222594069273}
-  - {fileID: 4184181722583037324}
   - {fileID: 6374645807982106113}
+  - {fileID: 5353017562171696173}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2140808684958775206
@@ -265,6 +265,7 @@ MonoBehaviour:
   speed: 2
   chaseRange: 10
   overshootDistance: 2
+  _targetOffset: {x: 0, y: 1, z: 0}
   hoverSpeed: 1
   hoverHeight: 0.5
   idleRange: 3
@@ -337,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _so: {fileID: 11400000, guid: 39e752879ea8587499e6fbad10ea297b, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 0
   _health: {fileID: 1273891370839942183}
 --- !u!114 &-5974879493160958373
 MonoBehaviour:
@@ -352,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 0
   _health: {fileID: 1273891370839942183}
 --- !u!114 &1787450105221050813
 MonoBehaviour:
@@ -400,7 +403,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7510507057698525955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7683663025318659112
+--- !u!1 &9056983495958775874
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,26 +411,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4184181722583037324}
+  - component: {fileID: 5353017562171696173}
+  - component: {fileID: 3945119416206752226}
   m_Layer: 0
-  m_Name: SmokePoint
+  m_Name: Sfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4184181722583037324
+--- !u!4 &5353017562171696173
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7683663025318659112}
+  m_GameObject: {fileID: 9056983495958775874}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.88, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7510507057698525955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3945119416206752226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9056983495958775874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b559eafa4bf1754f9e4e7f708804e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: ccbfb5af7d170a642b1a89ff048f6193, type: 2}
+  _playOnStart: 1
+  _stopOnDisable: 1
