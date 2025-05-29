@@ -109,6 +109,12 @@ public class HealthBehaviour : MonoBehaviour
     {
         SetFlashColor();
 
+        SetFlashAmount(5f);
+        yield return new WaitForSeconds(FlashTime);
+        SetFlashAmount(0.5f);
+
+        yield break;
+
         float flashInDuration = 0.1f;
         float holdDuration = 0.25f;
         float flashOutDuration = 0.1f;
