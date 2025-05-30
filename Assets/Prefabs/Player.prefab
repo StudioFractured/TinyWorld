@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9187798608903932366}
-  - component: {fileID: 5483899800430580257}
+  - component: {fileID: 7797784148545059132}
   m_Layer: 2
   m_Name: GroundChecker
   m_TagString: Untagged
@@ -210,8 +210,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 395022085557045353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &5483899800430580257
-CapsuleCollider2D:
+--- !u!61 &7797784148545059132
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -244,9 +244,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.9}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.8, y: 1.8}
+  m_EdgeRadius: 0
 --- !u!1 &4437652369258061668
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,8 +825,8 @@ GameObject:
   m_Component:
   - component: {fileID: 395022085557045353}
   - component: {fileID: 5196733177470246697}
-  - component: {fileID: 4976216670244558586}
-  - component: {fileID: 9086568007366929116}
+  - component: {fileID: 8665414997115122955}
+  - component: {fileID: 4609488086624588702}
   - component: {fileID: 7771583812530609442}
   - component: {fileID: 8639340084573827914}
   - component: {fileID: 7772586091523927594}
@@ -881,8 +890,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &4976216670244558586
-CapsuleCollider2D:
+--- !u!61 &8665414997115122955
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -915,11 +924,20 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
---- !u!58 &9086568007366929116
-CircleCollider2D:
+  m_Offset: {x: 0, y: 0.9}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.8, y: 1.8}
+  m_EdgeRadius: 0
+--- !u!61 &4609488086624588702
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -953,7 +971,17 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.5}
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.8, y: 1}
+  m_EdgeRadius: 0
 --- !u!210 &7771583812530609442
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1016,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 40e54ad1353f724448391a4f2fe69be8, type: 2}
   _input: {fileID: 7772586091523927594}
-  _col: {fileID: 5483899800430580257}
+  _groundChecker: {fileID: 7797784148545059132}
 --- !u!114 &6954671280340619532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,8 +1076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02301bff58329584ea26ebc781561354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultCollider: {fileID: 4976216670244558586}
-  _crouchCollider: {fileID: 9086568007366929116}
+  _defaultCollider: {fileID: 8665414997115122955}
+  _crouchCollider: {fileID: 4609488086624588702}
   _anim: {fileID: 607607355303983458}
 --- !u!114 &6815902453125264030
 MonoBehaviour:

@@ -15,7 +15,7 @@ namespace TarodevController
     {
         [SerializeField] ScriptableStats _stats;
         [SerializeField] PlayerInputHandler _input = null;
-        [SerializeField] CapsuleCollider2D _col;
+        [SerializeField] BoxCollider2D _groundChecker = null;
 
         private ScriptableStats _defaultStats = null;
         private Rigidbody2D _rb;
@@ -84,8 +84,8 @@ namespace TarodevController
             Physics2D.queriesStartInColliders = false;
 
             // Ground and Ceiling
-            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
-            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            bool groundHit = Physics2D.BoxCast(_groundChecker.bounds.center, _groundChecker.size, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            bool ceilingHit = Physics2D.BoxCast(_groundChecker.bounds.center, _groundChecker.size, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
 
             // Hit a Ceiling
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
