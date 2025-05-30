@@ -5,6 +5,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] InputActionReference _moveAction = null;
     [SerializeField] InputActionReference _jumpAction = null;
+    [SerializeField] InputActionReference _crouchAction = null;
     [SerializeField] InputActionReference _attackAction = null;
     [SerializeField] InputActionReference _defendAction = null;
 
@@ -14,6 +15,7 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 Move { get => _move; }
     public bool JumpPerformed { get => _jumpAction.action.WasPerformedThisFrame(); }
     public bool JumpPressed { get => _jumpAction.action.IsPressed(); }
+    public bool CrouchPressed { get => _crouchAction.action.IsPressed(); }
     public bool AttackPerformed { get => _attackAction.action.WasPerformedThisFrame(); }
     public bool DefendPressed { get => _defendAction.action.IsPressed(); }
 

@@ -181,7 +181,7 @@ MonoBehaviour:
   player: {fileID: 0}
   bulletPrefab: {fileID: 262456841301985408, guid: c158a2ee9f3ad284ca5a8c5801e4d68b, type: 3}
   firePoint: {fileID: 6017753003296164880}
-  moveSpeed: 3
+  moveSpeed: 5
   tiltAmount: 15
   swayHeight: 0.3
   swaySpeed: 2
@@ -193,7 +193,7 @@ MonoBehaviour:
   offsetMin: -0.6
   offsetMax: 0.6
   _targetOffset: {x: 0, y: 1, z: 0}
-  _frozeDuration: 0.3
+  _frozeDuration: 0.1
   isFrozen: 0
   _shootSfx: {fileID: 11400000, guid: 8ea8a7ffa8b62c64797eca798635df0d, type: 2}
 --- !u!114 &2456772793703358242
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _so: {fileID: 11400000, guid: 39e752879ea8587499e6fbad10ea297b, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 0
   _health: {fileID: 2456772793703358242}
 --- !u!114 &8890057899677288954
 MonoBehaviour:
@@ -276,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 0
   _health: {fileID: 2456772793703358242}
 --- !u!114 &-9133012132423669670
 MonoBehaviour:

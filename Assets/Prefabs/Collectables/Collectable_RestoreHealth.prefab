@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 562996214778648407, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 562996214778648407, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
       propertyPath: m_Offset.y
       value: -0.1
       objectReference: {fileID: 0}
