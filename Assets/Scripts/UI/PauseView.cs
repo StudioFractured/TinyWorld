@@ -11,6 +11,11 @@ public class PauseView : CanvasView
 
     public static event UnityAction<bool> OnPauseChanged = null;
 
+    private void Awake()
+    {
+        InstantHide();
+    }
+
     private void OnEnable()
     {
         _resumeButton.onClick.AddListener(TogglePause);
