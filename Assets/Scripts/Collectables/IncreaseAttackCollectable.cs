@@ -8,6 +8,11 @@ public class IncreaseAttackCollectable : AbstractCollectable
         {
             _weapon.IncreaseDamage();
             Destroy(gameObject);
+
+            if (_colliderHit.TryGetComponent(out PlayerBuffText _text))
+            {
+                _text.Play("Atk Up"/*, Color.yellow*/);
+            }
         }
     }
 }

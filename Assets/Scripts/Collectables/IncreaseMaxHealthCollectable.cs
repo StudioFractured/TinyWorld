@@ -8,6 +8,11 @@ public class IncreaseMaxHealthCollectable : AbstractCollectable
         {
             _health.IncreaseMaxValue();
             Destroy(gameObject);
+
+            if (_colliderHit.TryGetComponent(out PlayerBuffText _text))
+            {
+                _text.Play("HP Up"/*, Color.red*/);
+            }
         }
     }
 }
