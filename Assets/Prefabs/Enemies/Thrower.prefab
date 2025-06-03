@@ -312,7 +312,7 @@ MonoBehaviour:
   _anim: {fileID: 7790543370176449317}
   _frozeDuration: 0.3
   isFrozen: 0
-  _shootSfx: {fileID: 11400000, guid: 8ea8a7ffa8b62c64797eca798635df0d, type: 2}
+  _shootSfx: {fileID: 11400000, guid: 0fdef27a67b8fc841973f8ad2c1a87aa, type: 2}
 --- !u!114 &6685884974091744510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _so: {fileID: 11400000, guid: 39e752879ea8587499e6fbad10ea297b, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 0
   _health: {fileID: 6685884974091744510}
 --- !u!114 &5941067208846998575
 MonoBehaviour:
@@ -393,6 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _so: {fileID: 11400000, guid: 45341ae71fd58584199d40c8026112c9, type: 2}
   _playOnStart: 0
+  _stopOnDisable: 0
   _health: {fileID: 6685884974091744510}
 --- !u!114 &5960285000430550736
 MonoBehaviour:
@@ -409,7 +411,7 @@ MonoBehaviour:
   _health: {fileID: 6685884974091744510}
   _prefab: {fileID: 8462803331059083727, guid: d108a8a4a1c25864b91eca20de3352e7, type: 3}
   _spawnPoint: {fileID: 5519384776289092853}
-  _offset: {x: 0, y: 0}
+  _offset: {x: 0, y: 1}
 --- !u!1 &8617297543140383212
 GameObject:
   m_ObjectHideFlags: 0

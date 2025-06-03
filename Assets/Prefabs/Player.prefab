@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 3030206520010725036}
+  _sfx: {fileID: 0}
   _time: 0.5
   _input: {fileID: 7772586091523927594}
 --- !u!1 &1814278818751775071
@@ -535,6 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 3880523448500832217}
+  _sfx: {fileID: 11400000, guid: 65d60821189080648b665d48219f7c75, type: 2}
   _time: 0.3
   _input: {fileID: 7772586091523927594}
 --- !u!114 &6713804980678836454
@@ -729,6 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 5435967000923112967}
+  _sfx: {fileID: 11400000, guid: 65d60821189080648b665d48219f7c75, type: 2}
   _time: 0.3
   _input: {fileID: 7772586091523927594}
 --- !u!114 &5760091053500931846
@@ -1076,6 +1079,8 @@ GameObject:
   - component: {fileID: 607607355303983458}
   - component: {fileID: 6983071271188519699}
   - component: {fileID: 8423089838351927086}
+  - component: {fileID: 4645354110811646950}
+  - component: {fileID: 1307271199325130565}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1407,6 +1412,38 @@ MonoBehaviour:
   _yOffset: 1.5
   _moveDuration: 1
   _fadeDuration: 1
+--- !u!114 &4645354110811646950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943158972980337507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f0ab14eb8ed8f49966046532313ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: d8c5f12de1be03c47b60e71694b4af3c, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _health: {fileID: 6815902453125264030}
+--- !u!114 &1307271199325130565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943158972980337507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62787c975c131384fab207a32d260d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _so: {fileID: 11400000, guid: c97482fd9c8fd124cb2829104ca98a03, type: 2}
+  _playOnStart: 0
+  _stopOnDisable: 0
+  _health: {fileID: 6815902453125264030}
 --- !u!1 &7792777339260106606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,5 +1710,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 5038187475335703368}
+  _sfx: {fileID: 0}
   _time: 0.5
   _input: {fileID: 7772586091523927594}

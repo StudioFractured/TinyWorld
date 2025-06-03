@@ -4,6 +4,7 @@ using UnityEngine;
 public class MeleeWeapon : MonoBehaviour
 {
     [SerializeField] Collider2D _collider = null;
+    [SerializeField] AudioSO _sfx = null;
     [SerializeField] float _time = 0.5f;
 
     [Header("// PLAYER")]
@@ -19,6 +20,7 @@ public class MeleeWeapon : MonoBehaviour
         if (_input.AttackPerformed)
         {
             Attack();
+            _sfx.Play(transform.position);
         }
     }
 

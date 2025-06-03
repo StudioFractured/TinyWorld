@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tags: {fileID: 11400000, guid: df3bf651d68e53841ab33d442d1ae122, type: 2}
+  _audioSfx: {fileID: 11400000, guid: 89d948875a0059e42a135fad7ead0fa3, type: 2}
   _restoreValue: 1

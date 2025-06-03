@@ -88,7 +88,8 @@ public class HealthBehaviour : MonoBehaviour
 
     private IEnumerator DelayedDeath()
     {
-        yield return new WaitForSeconds(0.15f);
+        //yield return null;
+        yield return new WaitForSeconds(0.1f);
         OnDie?.Invoke();
         gameObject.SetActive(false);
     }

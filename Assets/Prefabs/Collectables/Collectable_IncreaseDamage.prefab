@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tags: {fileID: 11400000, guid: df3bf651d68e53841ab33d442d1ae122, type: 2}
+  _audioSfx: {fileID: 11400000, guid: 31889d4046396034290ee430147bcb07, type: 2}
 --- !u!4 &8861330832055947941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5618154379204239093, guid: 0e3ebcc4c1287dc42ab53c0e5bcb0f34, type: 3}
