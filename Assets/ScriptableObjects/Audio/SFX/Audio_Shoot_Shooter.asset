@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d518180a961b5144a5c148621b967b7, type: 3}
   m_Name: Audio_Shoot_Shooter
   m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: bad5ea62df7a28e47a29bbdce92ccca4, type: 3}
+  _clip: {fileID: 8300000, guid: 3277b0a2754c77649a8725423b9720ea, type: 3}
   _output: {fileID: 0}
   _isMusic: 0
   _bypassEffects: 0

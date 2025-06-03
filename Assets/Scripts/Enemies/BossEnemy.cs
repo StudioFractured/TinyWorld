@@ -8,6 +8,7 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
     public Transform player;
     public Bullet bulletPrefab;
     public Transform firePoint;
+    public ParticleSystem _shootVfx = null;
 
     [Header("Movement")]
     public float moveSpeed = 3f;
@@ -111,6 +112,7 @@ public class BossEnemy : MonoBehaviour, IReactOnHit
                 Vector3 targetPos = GetTargetPosition() + new Vector3(0, randomYOffset, 0);
                 var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                 bullet.SetTarget(targetPos);
+                _shootVfx.Play();
             }
 
             if (i < burstCount - 1)

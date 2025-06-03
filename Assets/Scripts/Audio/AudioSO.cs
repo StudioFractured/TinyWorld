@@ -60,7 +60,7 @@ public class AudioSO : ScriptableObject
         _audioSource.pitch = _pitch;
         _audioSource.panStereo = _panStereo;
         _audioSource.reverbZoneMix = _reverbZoneMix;
-        _audioSource.time = _time;
+        //_audioSource.time = _time;
 
         _audioSource.spatialBlend = _spatialBlend;
         _audioSource.rolloffMode = _rolloffMode;
