@@ -1,6 +1,5 @@
 using TarodevController;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerAnim : MonoBehaviour
 {
