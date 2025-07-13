@@ -6,6 +6,7 @@ public class InitializeItem : MonoBehaviour
 {
     public Item item;
     private SpriteRenderer spriteRenderer;
+    public int qty;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class InitializeItem : MonoBehaviour
         {
             spriteRenderer.sprite = item.sprite;
             gameObject.name = item.itemName.ToString();
+            qty = item.Quantity;
         }
     }
 }

@@ -12,6 +12,7 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField] GameObject _lastDamageSource = null;
     [SerializeField] bool _hasTakenDamageThisFrame = false;
     public bool isPlayer = false;
+    public bool IsChest = false;
 
     public event UnityAction<float> OnHealed = null;
     public event UnityAction<float> OnDamageTaken = null;
@@ -27,11 +28,16 @@ public class HealthBehaviour : MonoBehaviour
     public SpriteRenderer _spriteRenderer;
     public Material _material;
 
+    
+
     private void Awake()
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _material = new Material(_spriteRenderer.material);
         _spriteRenderer.material = _material; // ✅ Assign the material back
+
+        if (gameObject.GetComponent<ChestContents>() != null) { IsChest = true; }
+
 
         ResetValue();
     }
@@ -50,6 +56,19 @@ public class HealthBehaviour : MonoBehaviour
 
     public void TakeDamage(GameObject source, float value)
     {
+        if (IsChest)
+        {
+            /*ChestContents _chest = GetComponent<ChestContents>();
+
+            if (gameObject.tag == "common")
+                _chest.OpenChest(_chest.gameObject, new Vector2(1f, 3f), new Vector2(2f, 4f));
+            else if (_chest.gameObject.tag == "rare")
+                _chest.OpenChest(gameObject, new Vector2(2f, 4f), new Vector2(3f, 6f));
+            else if (_chest.gameObject.tag == "epic")
+                _chest.OpenChest(gameObject, new Vector2(3f, 5f), new Vector2(4f, 8f));
+            Debug.Log("WOOOOOOO");*/
+        }
+
         if (!enabled) return;
 
         _lastDamageSource = source;

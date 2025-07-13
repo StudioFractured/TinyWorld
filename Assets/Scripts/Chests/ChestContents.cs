@@ -1,47 +1,55 @@
-using DG.Tweening.Core.Easing;
 using System.Collections;
 using UnityEngine;
 
+public enum ChestTypes
+{
+    Common, Rare, Epic
+}
+
 public class ChestContents : MonoBehaviour
 {
-    public Item[] Items;                    // The list of item ScriptableObjects
-    public GameObject pickupPrefab;         // The prefab to spawn
-    public Transform test;                  // Location to spawn
+    public Item[] Items;
+    public GameObject pickupPrefab;
 
     [Header("Bounce Force")]
-    public Vector2 X_Force;
-    public Vector2 Y_Force;
+    public Vector2 X_Force = new Vector2(-3f, 3f);
+    public Vector2 Y_Force = new Vector2(2f, 6f);
+    public ChestTypes chestType;
 
-    public bool Spawn = false;
-
-    private void Update()
+    public void OpenChest(GameObject chest, Vector2 DropCount, Vector2 qty)
     {
-        if (Spawn)
+        int dropCount = Random.Range((int)DropCount.x, (int)DropCount.y);
+
+        GameObject itemPool = GameObject.FindGameObjectWithTag("ItemPool");
+        if (itemPool == null)
         {
-            CommonChest(test.gameObject);
-            //Spawn = false;
+            Debug.LogError("No GameObject found with tag 'ItemPool'!");
+            return;
         }
-    }
-
-    // Common chests will drop 1-3 item types in quantity of 2-4
-    public void CommonChest(GameObject chest)
-    {
-        int dropCount = Random.Range(1, 4);  
 
         for (int i = 0; i < dropCount; i++)
         {
-            GameObject newPickup = Instantiate(pickupPrefab, chest.transform);
+            GameObject newPickup = Instantiate(pickupPrefab, chest.transform.position, Quaternion.identity);
             InitializeItem init = newPickup.GetComponent<InitializeItem>();
 
             init.item = Instantiate(Items[Random.Range(0, Items.Length)]);
-            init.item.Quantity = Random.Range(2, 5);
+            init.item.Quantity = Random.Range((int)qty.x, (int)qty.y);
+
+            newPickup.transform.SetParent(itemPool.transform);
 
             StartCoroutine(ApplyForce(newPickup));
         }
+
+        DestroyAllParents(gameObject);
     }
 
     private IEnumerator ApplyForce(GameObject obj)
     {
+        if (obj == null)
+        {
+            yield break;
+        }
+
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         if (rb == null)
         {
@@ -55,5 +63,16 @@ public class ChestContents : MonoBehaviour
         rb.AddForce(new Vector2(xForce, yForce), ForceMode2D.Impulse);
 
         yield return null;
+    }
+
+    private void DestroyAllParents(GameObject obj)
+    {
+        Transform current = obj.transform;
+        while (current != null)
+        {
+            Transform parent = current.parent;
+            Destroy(current.gameObject);
+            current = parent;
+        }
     }
 }

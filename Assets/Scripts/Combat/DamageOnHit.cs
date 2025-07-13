@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -12,7 +13,26 @@ public class DamageOnHit : MonoBehaviour
     {
         if (!_tags.HasTag(_other.gameObject)) return;
 
-        if (_other.TryGetComponent(out HealthBehaviour _health))
+        if(_other.TryGetComponent(out ChestContents _chest))
+        {
+            if (_chest.chestType == ChestTypes.Common)
+            {
+                Debug.Log("Common");
+                _chest.OpenChest(_chest.gameObject, new Vector2(1f, 3f), new Vector2(2f, 4f));
+            }
+            else if (_chest.chestType == ChestTypes.Rare)
+            {
+                Debug.Log("Rare");
+                _chest.OpenChest(gameObject, new Vector2(2f, 4f), new Vector2(3f, 6f));
+            }
+            else if (_chest.chestType == ChestTypes.Epic)
+            {
+                Debug.Log("Epic");
+                _chest.OpenChest(gameObject, new Vector2(3f, 5f), new Vector2(4f, 8f));
+            }
+            }
+
+            if (_other.TryGetComponent(out HealthBehaviour _health))
         {
             _health.TakeDamage(gameObject, _damage);
         }
