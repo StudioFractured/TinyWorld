@@ -8,13 +8,20 @@ public class DamageOnHit : MonoBehaviour
     [SerializeField] TagCollectionSO _tags = null;
     [SerializeField] int _damage = 1;
     [SerializeField] bool _destroyOnHit = false;
+    private Inventory inventory;
+
+    private void Awake()
+    {
+        inventory = FindFirstObjectByType<Inventory>();
+    }
 
     private void OnTriggerEnter2D(Collider2D _other)
     {
         if (!_tags.HasTag(_other.gameObject)) return;
 
-        if(_other.TryGetComponent(out ChestContents _chest))
+        if (_other.TryGetComponent(out ChestContents _chest))
         {
+            if(inventory.key == 0) { goto bigJump; }
             if (_chest.chestType == ChestTypes.Common)
             {
                 Debug.Log("Common");
@@ -30,9 +37,10 @@ public class DamageOnHit : MonoBehaviour
                 Debug.Log("Epic");
                 _chest.OpenChest(gameObject, new Vector2(3f, 5f), new Vector2(4f, 8f), _chest.chestType);
             }
-            }
+        }
+    bigJump:
 
-            if (_other.TryGetComponent(out HealthBehaviour _health))
+        if (_other.TryGetComponent(out HealthBehaviour _health))
         {
             _health.TakeDamage(gameObject, _damage);
         }

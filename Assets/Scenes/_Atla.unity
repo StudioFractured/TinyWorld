@@ -1825,7 +1825,7 @@ MonoBehaviour:
   PixieDust: 0
   Harp: 0
   Fabric: 0
-  key: 10
+  key: 1
 --- !u!1 &2138466249
 GameObject:
   m_ObjectHideFlags: 0

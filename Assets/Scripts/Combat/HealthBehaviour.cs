@@ -27,8 +27,7 @@ public class HealthBehaviour : MonoBehaviour
 
     public SpriteRenderer _spriteRenderer;
     public Material _material;
-
-    
+    private ChestContents _chestContents;    
 
     private void Awake()
     {
@@ -36,8 +35,8 @@ public class HealthBehaviour : MonoBehaviour
         _material = new Material(_spriteRenderer.material);
         _spriteRenderer.material = _material; // ✅ Assign the material back
 
-        if (gameObject.GetComponent<ChestContents>() != null) { IsChest = true; }
-
+        _chestContents = GetComponent<ChestContents>();
+        if (_chestContents != null) { IsChest = true; }
 
         ResetValue();
     }
@@ -56,11 +55,6 @@ public class HealthBehaviour : MonoBehaviour
 
     public void TakeDamage(GameObject source, float value)
     {
-        if (IsChest)
-        {
-            return;
-        }
-
         if (!enabled) return;
 
         _lastDamageSource = source;
@@ -71,6 +65,12 @@ public class HealthBehaviour : MonoBehaviour
 
         if (_currentValue <= 0)
         {
+            if (IsChest)
+            {
+                int chance = Random.Range(0, 10);
+                if (chance > 7)
+                    _chestContents.BrokenChest(gameObject, new Vector2(1f, 1f), new Vector2(1f, 1f), _chestContents.chestType);
+            }
             Die();
         }
         else

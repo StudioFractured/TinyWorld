@@ -31,11 +31,9 @@ public class ChestContents : MonoBehaviour
 
     public void OpenChest(GameObject chest, Vector2 DropCount, Vector2 qty, ChestTypes chestType)
     {
-        if (inventory.key == 0) return;
-
-        int totalDrops = (int)qty.x + (int)qty.y;
-        int dropCount = Random.Range((int)DropCount.x, (int)DropCount.y);
-        int Drops = 0;
+        int remainingDrops = Random.Range((int)qty.x, (int)qty.y + 1); // total drop quantity
+        int dropCount = Random.Range((int)DropCount.x, (int)DropCount.y + 1); // how many types
+        dropCount = Mathf.Min(dropCount, remainingDrops); // don't ask for more types than quantity
 
         GameObject itemPool = GameObject.FindGameObjectWithTag("ItemPool");
         if (itemPool == null)
@@ -44,37 +42,85 @@ public class ChestContents : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < dropCount && Drops < totalDrops; i++)
+        for (int i = 0; i < dropCount; i++)
         {
             GameObject newPickup = Instantiate(pickupPrefab, chest.transform.position, Quaternion.identity);
             InitializeItem init = newPickup.GetComponent<InitializeItem>();
-            int lenght = 0;
-            
+
+            int length = 0;
             switch (chestType)
             {
                 case ChestTypes.Common:
-                    lenght = Items.Length - 2;
+                    length = Items.Length - 2;
                     break;
                 case ChestTypes.Rare:
-                    lenght = Items.Length - 1;
+                    length = Items.Length - 1;
                     break;
                 case ChestTypes.Epic:
-                    lenght = Items.Length;
+                    length = Items.Length;
                     break;
             }
 
-            init.item = Instantiate(Items[Random.Range(0, lenght)]);
-            init.item.Quantity = Random.Range((int)qty.x, (int)qty.y);
+            init.item = Instantiate(Items[Random.Range(0, length)]);
 
-            Drops += init.item.Quantity;
+            // Give this item a portion of the remaining quantity
+            int maxQtyForThisDrop = remainingDrops - (dropCount - 1 - i); // leave at least 1 for remaining items
+            int quantity = Random.Range(1, maxQtyForThisDrop + 1);
+            init.item.Quantity = quantity;
+            remainingDrops -= quantity;
 
             newPickup.transform.SetParent(itemPool.transform);
-
             StartCoroutine(ApplyForce(newPickup));
         }
 
-
         inventory.key -= 1;
+        DestroyAllParents(gameObject);
+    }
+
+    public void BrokenChest(GameObject chest, Vector2 DropCount, Vector2 qty, ChestTypes chestType)
+    {
+        int remainingDrops = Random.Range((int)qty.x, (int)qty.y + 1); // total drop quantity
+        int dropCount = Random.Range((int)DropCount.x, (int)DropCount.y + 1); // how many types
+        dropCount = Mathf.Min(dropCount, remainingDrops); // don't ask for more types than quantity
+
+        GameObject itemPool = GameObject.FindGameObjectWithTag("ItemPool");
+        if (itemPool == null)
+        {
+            Debug.LogError("No GameObject found with tag 'ItemPool'!");
+            return;
+        }
+
+        for (int i = 0; i < dropCount; i++)
+        {
+            GameObject newPickup = Instantiate(pickupPrefab, chest.transform.position, Quaternion.identity);
+            InitializeItem init = newPickup.GetComponent<InitializeItem>();
+
+            int length = 0;
+            switch (chestType)
+            {
+                case ChestTypes.Common:
+                    length = Items.Length - 2;
+                    break;
+                case ChestTypes.Rare:
+                    length = Items.Length - 1;
+                    break;
+                case ChestTypes.Epic:
+                    length = Items.Length;
+                    break;
+            }
+
+            init.item = Instantiate(Items[Random.Range(0, length)]);
+
+            // Give this item a portion of the remaining quantity
+            int maxQtyForThisDrop = remainingDrops - (dropCount - 1 - i); // leave at least 1 for remaining items
+            int quantity = Random.Range(1, maxQtyForThisDrop + 1);
+            init.item.Quantity = quantity;
+            remainingDrops -= quantity;
+
+            newPickup.transform.SetParent(itemPool.transform);
+            StartCoroutine(ApplyForce(newPickup));
+        }
+
         DestroyAllParents(gameObject);
     }
 
