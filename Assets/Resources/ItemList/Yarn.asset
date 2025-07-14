@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81e62a5bc68cb21488b05b62a43f28b1, type: 3}
-  m_Name: Floot
+  m_Name: Yarn
   m_EditorClassIdentifier: 
-  itemName: 1
-  sprite: {fileID: 2259422710748135510, guid: 96798560995d4e64790ebe70822fd0d3, type: 3}
+  itemName: 0
+  sprite: {fileID: 2707044199824499068, guid: b8b58df08fb472947bc4c2af3eb66dc2, type: 3}
   Quantity: 0

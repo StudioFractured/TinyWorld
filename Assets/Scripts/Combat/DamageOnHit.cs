@@ -18,17 +18,17 @@ public class DamageOnHit : MonoBehaviour
             if (_chest.chestType == ChestTypes.Common)
             {
                 Debug.Log("Common");
-                _chest.OpenChest(_chest.gameObject, new Vector2(1f, 3f), new Vector2(2f, 4f));
+                _chest.OpenChest(_chest.gameObject, new Vector2(1f, 3f), new Vector2(2f, 4f), _chest.chestType);
             }
             else if (_chest.chestType == ChestTypes.Rare)
             {
                 Debug.Log("Rare");
-                _chest.OpenChest(gameObject, new Vector2(2f, 4f), new Vector2(3f, 6f));
+                _chest.OpenChest(gameObject, new Vector2(2f, 4f), new Vector2(3f, 6f), _chest.chestType);
             }
             else if (_chest.chestType == ChestTypes.Epic)
             {
                 Debug.Log("Epic");
-                _chest.OpenChest(gameObject, new Vector2(3f, 5f), new Vector2(4f, 8f));
+                _chest.OpenChest(gameObject, new Vector2(3f, 5f), new Vector2(4f, 8f), _chest.chestType);
             }
             }
 

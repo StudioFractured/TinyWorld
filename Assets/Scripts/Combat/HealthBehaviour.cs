@@ -58,15 +58,7 @@ public class HealthBehaviour : MonoBehaviour
     {
         if (IsChest)
         {
-            /*ChestContents _chest = GetComponent<ChestContents>();
-
-            if (gameObject.tag == "common")
-                _chest.OpenChest(_chest.gameObject, new Vector2(1f, 3f), new Vector2(2f, 4f));
-            else if (_chest.gameObject.tag == "rare")
-                _chest.OpenChest(gameObject, new Vector2(2f, 4f), new Vector2(3f, 6f));
-            else if (_chest.gameObject.tag == "epic")
-                _chest.OpenChest(gameObject, new Vector2(3f, 5f), new Vector2(4f, 8f));
-            Debug.Log("WOOOOOOO");*/
+            return;
         }
 
         if (!enabled) return;

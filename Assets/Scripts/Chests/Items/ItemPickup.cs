@@ -33,6 +33,9 @@ public class ItemPickup : MonoBehaviour
                 case "Harp":
                     inventory.Harp += item.qty;
                     break;
+                case "Key":
+                    inventory.key++;
+                    break;
             }
 
             Destroy(item.gameObject);
