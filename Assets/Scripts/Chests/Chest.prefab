@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9078043654055255377}
   - component: {fileID: 5481614109779180784}
   - component: {fileID: 5870201488070402828}
-  - component: {fileID: 34427423571655884}
   - component: {fileID: 6355548771529234022}
   m_Layer: 0
   m_Name: Chest
@@ -133,21 +132,6 @@ MonoBehaviour:
   FlashTime: 0.1
   _spriteRenderer: {fileID: 0}
   _material: {fileID: 0}
---- !u!114 &34427423571655884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3515209201181866085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e22b00934e7d64b8d262cf927434ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tags: {fileID: 11400000, guid: cc334079652fcf94983c61ffa4337060, type: 2}
-  _damage: 1
-  _destroyOnHit: 0
 --- !u!114 &6355548771529234022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,13 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35693e0c26795a4fa973f7c9c32905b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 11400000, guid: 3c0f8e5d1b07a7942a474e5afedc863d, type: 2}
-  - {fileID: 11400000, guid: e24c15ba8885c724586dcc47d69a9505, type: 2}
+  Items: []
   pickupPrefab: {fileID: 8597178526653480189, guid: fce02cb238d510a4ebc8ee332cb62b4b, type: 3}
   X_Force: {x: -3, y: 3}
   Y_Force: {x: 2, y: 6}
-  chestType: 1
+  chestType: 0
 --- !u!1 &7890201182814437908
 GameObject:
   m_ObjectHideFlags: 0

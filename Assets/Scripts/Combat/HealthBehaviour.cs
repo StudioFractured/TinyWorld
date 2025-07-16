@@ -67,6 +67,7 @@ public class HealthBehaviour : MonoBehaviour
         {
             if (IsChest)
             {
+                Debug.Log("AAAAAAAAAAAAAAA");
                 int chance = Random.Range(0, 10);
                 if (chance > 7)
                     _chestContents.BrokenChest(gameObject, new Vector2(1f, 1f), new Vector2(1f, 1f), _chestContents.chestType);

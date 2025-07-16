@@ -2299,10 +2299,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
-    - target: {fileID: 3515209201181866085, guid: 3a0064077fdf6bc488c811cf7306cbfa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5153128687050592295, guid: 3a0064077fdf6bc488c811cf7306cbfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -108.5
@@ -2341,14 +2337,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5153128687050592295, guid: 3a0064077fdf6bc488c811cf7306cbfa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6355548771529234022, guid: 3a0064077fdf6bc488c811cf7306cbfa, type: 3}
-      propertyPath: chestType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6355548771529234022, guid: 3a0064077fdf6bc488c811cf7306cbfa, type: 3}
-      propertyPath: Items.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
